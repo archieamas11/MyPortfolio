@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="#hero" id='home-nav' class="active" aria-label="Home - navigation bar">
+                    <i data-lucide="house">
+                        home
+                    </i>
+                    <span class="caption">Home</span>
+                </a></li>
+            <li><a href="#projects" id="projects-nav" aria-label="Projects - Navigation bar">
+                    <i data-lucide="code">
+                        Projects
+                    </i>
+                    <span class="caption">Projects</span>
+                </a></li>
+            <li><a href="#about-me" id="about-nav" aria-label="About me - Navigation bar">
+                    <i data-lucide="smile">
+                        About Me
+                    </i>
+                    <span class="caption">About</span>
+                </a></li>
+            <li><a href="#contact" id="contact-nav" aria-label="Contact me - Navigation bar">
+                    <i data-lucide="message-circle">
+                        chat_bubble
+                    </i>
+                    <span class="caption">Contact</span>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Hero section -->
+        <section class="hero" id="hero">
+            <div class="heading">
+                <a href="#">
+                    <div id="logo" class="home-logo item"></div>
+                </a>
+                <div class="container-mini">
+                    <h1 id="title" class="item"><strong class="strong">Archie</strong> Albarico</h1>
+                    <div id="social-list" class="item">
+                        <a href="https://www.github.com/archhieamas11" data-title="GitHub"
+                            aria-label="Github" class="social-icon">
+                            <i data-lucide="github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/archhieamas11" data-title="LinkedIn"
+                            aria-label="LinkedIn" class="social-icon">
+                            <i data-lucide="linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/archie.albarico88" data-title="Facebook"
+                            aria-label="Facebook" class="social-icon">
+                            <i data-lucide="facebook"></i>
+                            Facebook
+                        </a>
+                        <a href="https://www.instagram.com/archhieamas11" data-title="Instagram"
+                            aria-label="Instagram" class="social-icon">
+                            <i data-lucide="instagram"></i>
+                            Instagram
+                        </a>
+                        <a href="https://t.me/rico" data-title="Telegram" aria-label="Telegram"
+                            class="social-icon">
+                            <i data-lucide="send"></i>
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My projects section -->
+        <section class="projects" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <!-- Section title and subtitle go here -->
+                    <h2>My Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <!-- Project content goes here -->
+                        <h3>Project 1</h3>
+                    </div>
+                    <div class="project-item">
+                        <!-- Project content goes here -->
+                        <h3>Project 2</h3>
+                    </div>
+                    <div class="project-item">
+                        <!-- Project content goes here -->
+                        <h3>Project 3</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About me section -->
+        <section class="about-me" id="about-me">
+            <div class="section-container">
+                <div class="about-layout">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <!-- Text content goes here -->
+                            <h2>About Me</h2>
+                        </div>
+                        <div class="about-skills">
+                            <!-- Skills content goes here -->
+                            <h3>Skills</h3>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <!-- Visual content goes here -->
+                        <img src="assets/images/about-visual.jpg" alt="About Me Visual" class="about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact me section -->
+        <section class="contact" id="contact">
+            <div class="section-container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <!-- Contact information goes here -->
+                        <h2>Contact Me</h2>
+                        <p>If you have any questions or would like to get in touch, feel free to
+                    </div>
+                    <div class="contact-form">
+                        <!-- Contact form goes here -->
+                        <form>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <button type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/js/nav.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
