@@ -4,18 +4,22 @@
         border-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.2);
         box-shadow: 0 0 5px rgba(var(--primary-color-rgb, 0, 123, 255), 0.1);
     }
+
     25% {
         border-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.4);
         box-shadow: 0 0 10px rgba(var(--primary-color-rgb, 0, 123, 255), 0.2);
     }
+
     50% {
         border-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.6);
         box-shadow: 0 0 15px rgba(var(--primary-color-rgb, 0, 123, 255), 0.3);
     }
+
     75% {
         border-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.4);
         box-shadow: 0 0 10px rgba(var(--primary-color-rgb, 0, 123, 255), 0.2);
     }
+
     100% {
         border-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.2);
         box-shadow: 0 0 5px rgba(var(--primary-color-rgb, 0, 123, 255), 0.1);
@@ -26,9 +30,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -90,7 +96,7 @@
     content: '';
     position: absolute;
     left: -2px;
-    top: 1rem;
+    top: 1.4rem;
     width: 30px;
     height: 2px;
     background-color: var(--primary-color, #007bff);
@@ -100,7 +106,7 @@
     content: '';
     position: absolute;
     left: 26px;
-    top: 0.5rem;
+    top: 0.9rem;
     width: 12px;
     height: 12px;
     background-color: var(--primary-color, #007bff);
@@ -120,6 +126,8 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-left: 4px solid var(--primary-color, #007bff);
+    text-shadow: rgba(64, 88, 160, 1) 0px 0px 37px;
+    animation: borderGlow 3s ease-in-out infinite;
 }
 
 .node-content {
@@ -140,13 +148,11 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(
-        45deg,
-        rgba(var(--primary-color-rgb, 0, 123, 255), 0.1),
-        rgba(var(--primary-color-rgb, 0, 123, 255), 0.3),
-        rgba(var(--primary-color-rgb, 0, 123, 255), 0.1),
-        rgba(var(--primary-color-rgb, 0, 123, 255), 0.3)
-    );
+    background: linear-gradient(45deg,
+            rgba(var(--primary-color-rgb, 0, 123, 255), 0.1),
+            rgba(var(--primary-color-rgb, 0, 123, 255), 0.3),
+            rgba(var(--primary-color-rgb, 0, 123, 255), 0.1),
+            rgba(var(--primary-color-rgb, 0, 123, 255), 0.3));
     background-size: 400% 400%;
     border-radius: 8px;
     z-index: -1;
@@ -217,7 +223,8 @@
 
 .about-info {
     flex: 1;
-    min-width: 0; /* Allows text to wrap properly */
+    min-width: 0;
+    /* Allows text to wrap properly */
 }
 
 .about-name h4 {
@@ -323,17 +330,17 @@
     .tree-container {
         padding: 1.5rem;
     }
-    
+
     .tree-title {
         font-size: 1.75rem;
         padding-left: 2.5rem;
     }
-    
+
     .details-skills-flex {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .personal-details-section,
     .interest-section,
     .skills-section {
@@ -433,7 +440,8 @@
     }
 
     .tree-title::before {
-        display: none; /* Hide decorative elements on very small screens */
+        display: none;
+        /* Hide decorative elements on very small screens */
     }
 
     .tree-branch {
