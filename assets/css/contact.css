@@ -1,0 +1,14 @@
+/* Contact Section Layout */
+.contact-layout {
+    display: flex;
+    gap: 3em;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+}

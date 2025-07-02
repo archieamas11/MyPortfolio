@@ -16,7 +16,7 @@ window.addEventListener('beforeunload', function () {
 
 // Force scroll to top on page load
 window.addEventListener('load', function () {
-  setTimeout(function() {
+  setTimeout(function () {
     window.scrollTo(0, 0);
   }, 10);
 });
@@ -65,36 +65,36 @@ document.addEventListener("DOMContentLoaded", function () {
 try {
   //change the active nav to the current scroll position based on sections
   let hero = document.getElementById("hero");
-  let projects = document.getElementById("projects");
   let about = document.getElementById("about-me");
+  let projects = document.getElementById("projects");
   let contact = document.getElementById("contact");
 
   let home_nav = document.getElementById("home-nav");
-  let projects_nav = document.getElementById("projects-nav");
   let about_nav = document.getElementById("about-nav");
+  let projects_nav = document.getElementById("projects-nav");
   let contact_nav = document.getElementById("contact-nav");
 
   window.addEventListener("scroll", function () {
     let scroll = window.scrollY;
-    if (scroll < projects.offsetTop - 400) {
+    if (scroll < about.offsetTop - 400) {
       home_nav.classList.add("active");
+      about_nav.classList.remove("active");
       projects_nav.classList.remove("active");
-      about_nav.classList.remove("active");
       contact_nav.classList.remove("active");
-    } else if (scroll < about.offsetTop - 400) {
+    } else if (scroll < projects.offsetTop - 400) {
       home_nav.classList.remove("active");
-      projects_nav.classList.add("active");
-      about_nav.classList.remove("active");
+      about_nav.classList.add("active");
+      projects_nav.classList.remove("active");
       contact_nav.classList.remove("active");
     } else if (scroll < contact.offsetTop - 400) {
       home_nav.classList.remove("active");
-      projects_nav.classList.remove("active");
-      about_nav.classList.add("active");
+      about_nav.classList.remove("active");
+      projects_nav.classList.add("active");
       contact_nav.classList.remove("active");
     } else {
       home_nav.classList.remove("active");
-      projects_nav.classList.remove("active");
       about_nav.classList.remove("active");
+      projects_nav.classList.remove("active");
       contact_nav.classList.add("active");
     }
   });

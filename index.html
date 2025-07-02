@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/about.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
@@ -20,17 +22,17 @@
                     </i>
                     <span class="caption">Home</span>
                 </a></li>
-            <li><a href="#projects" id="projects-nav" aria-label="Projects - Navigation bar">
-                    <i data-lucide="code">
-                        Projects
-                    </i>
-                    <span class="caption">Projects</span>
-                </a></li>
             <li><a href="#about-me" id="about-nav" aria-label="About me - Navigation bar">
                     <i data-lucide="smile">
                         About Me
                     </i>
                     <span class="caption">About</span>
+                </a></li>
+            <li><a href="#projects" id="projects-nav" aria-label="Projects - Navigation bar">
+                    <i data-lucide="code">
+                        Projects
+                    </i>
+                    <span class="caption">Projects</span>
                 </a></li>
             <li><a href="#contact" id="contact-nav" aria-label="Contact me - Navigation bar">
                     <i data-lucide="message-circle">
@@ -51,31 +53,115 @@
                 <div class="container-mini">
                     <h1 id="title" class="item"><strong class="strong">Archie</strong> Albarico</h1>
                     <div id="social-list" class="item">
-                        <a href="https://www.github.com/archhieamas11" data-title="GitHub"
-                            aria-label="Github" class="social-icon">
+                        <a href="https://www.github.com/archhieamas11" data-title="GitHub" aria-label="Github"
+                            class="social-icon" style="--i: 0;">
                             <i data-lucide="github"></i>
                             GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/archhieamas11" data-title="LinkedIn"
-                            aria-label="LinkedIn" class="social-icon">
+                        <a href="https://www.linkedin.com/in/archhieamas11" data-title="LinkedIn" aria-label="LinkedIn"
+                            class="social-icon" style="--i: 1;">
                             <i data-lucide="linkedin"></i>
                             LinkedIn
                         </a>
-                        <a href="https://www.facebook.com/archie.albarico88" data-title="Facebook"
-                            aria-label="Facebook" class="social-icon">
+                        <a href="https://www.facebook.com/archie.albarico88" data-title="Facebook" aria-label="Facebook"
+                            class="social-icon" style="--i: 2;">
                             <i data-lucide="facebook"></i>
                             Facebook
                         </a>
-                        <a href="https://www.instagram.com/archhieamas11" data-title="Instagram"
-                            aria-label="Instagram" class="social-icon">
+                        <a href="https://www.instagram.com/archhieamas11" data-title="Instagram" aria-label="Instagram"
+                            class="social-icon" style="--i: 3;">
                             <i data-lucide="instagram"></i>
                             Instagram
                         </a>
-                        <a href="https://t.me/rico" data-title="Telegram" aria-label="Telegram"
-                            class="social-icon">
+                        <a href="https://t.me/rico" data-title="Telegram" aria-label="Telegram" class="social-icon"
+                            style="--i: 4;">
                             <i data-lucide="send"></i>
                             Telegram
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About me section -->
+        <section class="about-me" id="about-me">
+            <div class="section-container tree-container">
+                <h2 class="tree-title">About Me</h2>
+                <div class="tree-branch">
+                    <div class="tree-node">
+                        <h3 class="node-title">Profile</h3>
+                        <div class="node-content">
+                            <div class="about-profile d-flex">
+                                <div class="about-visual">
+                                    <img src="https://picsum.photos/300/200?random=1"
+                                        alt="Peaceful cemetery grounds with modern mapping technology" loading="lazy" />
+                                </div>
+                                <div class="about-info">
+                                    <div class="about-name">
+                                        <h4>Archie Albarico</h4>
+                                    </div>
+                                    <div class="about-description">
+                                        <p>Hello! I'm Archie Albarico, a passionate web developer with a love for
+                                            creating dynamic
+                                            and engaging web applications. I specialize in front-end development,
+                                            crafting user-friendly
+                                            interfaces that enhance the user experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tree-node ">
+                        <h3 class="node-title">Personal Information & Interest</h3>
+                        <div class="node-content">
+                            <div class="details-skills-flex ">
+                                <div class="personal-details-section">
+                                    <h4 class="subsection-title">Personal Details</h4>
+                                    <ul class="details-list">
+                                        <li><span class="label"><i data-lucide="phone"></i></span><span
+                                                class="value">09231226478</span></li>
+                                        <li><span class="label"><i data-lucide="map-pin"></i></span><span
+                                                class="value">Tunghaan, Minglanilla, Cebu</span></li>
+                                        <li><span class="label"><i data-lucide="mail"></i></span><span
+                                                class="value">archie.albarico@gmail.com</span></li>
+                                    </ul>
+                                </div>
+                                <div class="interest-section">
+                                    <h4 class="subsection-title">Interests</h4>
+                                    <div class="interest-grid">
+                                        <div class="interest-item">
+                                            <i data-lucide="music"></i>
+                                            <span>Music</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="camera"></i>
+                                            <span>Photography</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="clapperboard"></i>
+                                            <span>Editing</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="book-open"></i>
+                                            <span>Studying</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="brain"></i>
+                                            <span>AI</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="youtube"></i>
+                                            <span>YouTube</span>
+                                        </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="gamepad-2"></i>
+                                            <span>Gaming</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,27 +191,7 @@
             </div>
         </section>
 
-        <!-- About me section -->
-        <section class="about-me" id="about-me">
-            <div class="section-container">
-                <div class="about-layout">
-                    <div class="about-content">
-                        <div class="about-text">
-                            <!-- Text content goes here -->
-                            <h2>About Me</h2>
-                        </div>
-                        <div class="about-skills">
-                            <!-- Skills content goes here -->
-                            <h3>Skills</h3>
-                        </div>
-                    </div>
-                    <div class="about-visual">
-                        <!-- Visual content goes here -->
-                        <img src="assets/images/about-visual.jpg" alt="About Me Visual" class="about-image">
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Contact me section -->
         <section class="contact" id="contact">
@@ -146,6 +212,7 @@
                             <label for="message">Message:</label>
                             <textarea id="message" name="message" required></textarea>
                             <button type="submit">Send</button>
+                        </form>
                     </div>
                 </div>
             </div>
