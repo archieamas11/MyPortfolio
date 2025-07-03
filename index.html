@@ -7,9 +7,20 @@
     <title>Document</title>
     <link rel="icon" type="image/x-icon" href="assets/images/website-icon.png">
     <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Files - Load in order: Variables → Layout → Components → Sections -->
     <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Legacy styles - to be removed -->
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
@@ -85,7 +96,7 @@
         </section>
 
         <!-- About me section -->
-        <section class="about-me" id="about-me">
+        <section class="about-me " id="about-me">
             <div class="section-container tree-container">
                 <h2 class="tree-title">About Me</h2>
                 <div class="tree-branch">
@@ -102,11 +113,12 @@
                                         <h4>Archie Albarico</h4>
                                     </div>
                                     <div class="about-description">
-                                        <p>Hello! I'm Archie Albarico, a passionate web developer with a love for
-                                            creating dynamic
-                                            and engaging web applications. I specialize in front-end development,
-                                            crafting user-friendly
-                                            interfaces that enhance the user experience.</p>
+                                        <p>Hello! I'm Archie Albarico, an aspiring full-stack developer with a passion
+                                            for
+                                            creating dynamic and engaging web applications. I'm developing skills in
+                                            both
+                                            front-end and back-end development, crafting user-friendly interfaces and
+                                            building robust server-side solutions.</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,8 +152,8 @@
                                             <span>Photography</span>
                                         </div>
                                         <div class="interest-item">
-                                            <i data-lucide="clapperboard"></i>
-                                            <span>Editing</span>
+                                            <i data-lucide="video"></i>
+                                            <span>Videography</span>
                                         </div>
                                         <div class="interest-item">
                                             <i data-lucide="book-open"></i>
@@ -159,6 +171,117 @@
                                             <i data-lucide="gamepad-2"></i>
                                             <span>Gaming</span>
                                         </div>
+                                        <div class="interest-item">
+                                            <i data-lucide="drum"></i>
+                                            <span>Drumming</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-node">
+                        <h3 class="node-title">Skills & Technologies</h3>
+                        <div class="node-content">
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill-level="advanced">
+                                    <i class="devicon-html5-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>HTML5</h6>
+                                        <span class="experience">3+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="advanced">
+                                    <i class="devicon-css3-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>CSS3</h6>
+                                        <span class="experience">3+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="intermediate">
+                                    <i class="devicon-javascript-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>JavaScript</h6>
+                                        <span class="experience">2+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="intermediate">
+                                    <i class="devicon-mysql-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>MySQL</h6>
+                                        <span class="experience">3+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 70%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="intermediate">
+                                    <i class="devicon-php-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>PHP</h6>
+                                        <span class="experience">2+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 68%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="beginner">
+                                    <i class="devicon-react-original colored"></i>
+                                    <div class="skill-info">
+                                        <h6>React</h6>
+                                        <span class="experience">1+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="beginner">
+                                    <i class="devicon-react-original colored"></i>
+                                    <div class="skill-info">
+                                        <h6>React Native</h6>
+                                        <span class="experience">1+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 55%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="intermediate">
+                                    <i class="devicon-bootstrap-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>Bootstrap</h6>
+                                        <span class="experience">2+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="beginner">
+                                    <i class="devicon-java-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>Java</h6>
+                                        <span class="experience">2+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 50%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-skill-level="beginner">
+                                    <i class="devicon-cplusplus-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>C++</h6>
+                                        <span class="experience">1+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 50%"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,21 +295,72 @@
         <section class="projects" id="projects">
             <div class="section-container">
                 <div class="section-header">
-                    <!-- Section title and subtitle go here -->
                     <h2>My Projects</h2>
+                    <p>Here are some of the projects I've worked on. Each one represents a unique challenge and learning
+                        experience.</p>
                 </div>
                 <div class="projects-grid">
                     <div class="project-item">
-                        <!-- Project content goes here -->
-                        <h3>Project 1</h3>
+                        <h3>Sample E-commerce App</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i data-lucide="external-link"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i data-lucide="github"></i>
+                                Source Code
+                            </a>
+                        </div>
                     </div>
+
                     <div class="project-item">
-                        <!-- Project content goes here -->
-                        <h3>Project 2</h3>
+                        <h3>Sample Weather App</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i data-lucide="external-link"></i>
+                                Try App
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i data-lucide="github"></i>
+                                Source Code
+                            </a>
+                        </div>
                     </div>
+
                     <div class="project-item">
-                        <!-- Project content goes here -->
-                        <h3>Project 3</h3>
+                        <h3>Sample Todo App</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">LocalStorage</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Sass</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">
+                                <i data-lucide="external-link"></i>
+                                View Site
+                            </a>
+                            <a href="#" class="project-link secondary">
+                                <i data-lucide="github"></i>
+                                Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,22 +371,98 @@
         <!-- Contact me section -->
         <section class="contact" id="contact">
             <div class="section-container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to start a project or just want to chat? I'd love to hear from you!</p>
+                </div>
                 <div class="contact-layout">
                     <div class="contact-info">
-                        <!-- Contact information goes here -->
-                        <h2>Contact Me</h2>
-                        <p>If you have any questions or would like to get in touch, feel free to
+                        <h2>Let's Connect</h2>
+                        <p>If you have any questions, project ideas, or would like to collaborate, feel free to reach
+                            out. I'm always excited to work on new and challenging projects.</p>
+
+                        <ul class="contact-details">
+                            <li>
+                                <div class="contact-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">archie.albarico@gmail.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">09231226478</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-icon">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">Tunghaan, Minglanilla, Cebu</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="contact-social">
+                            <h4>Follow Me</h4>
+                            <div class="contact-social-links">
+                                <a href="https://www.github.com/archhieamas11" class="contact-social-link"
+                                    aria-label="GitHub">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/archhieamas11" class="contact-social-link"
+                                    aria-label="LinkedIn">
+                                    <i data-lucide="linkedin"></i>
+                                </a>
+                                <a href="https://www.facebook.com/archie.albarico88" class="contact-social-link"
+                                    aria-label="Facebook">
+                                    <i data-lucide="facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/archhieamas11" class="contact-social-link"
+                                    aria-label="Instagram">
+                                    <i data-lucide="instagram"></i>
+                                </a>
+                                <a href="https://t.me/rico" class="contact-social-link" aria-label="Telegram">
+                                    <i data-lucide="send"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="contact-form">
-                        <!-- Contact form goes here -->
                         <form>
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" required></textarea>
-                            <button type="submit">Send</button>
+                            <h3>Send Me a Message</h3>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message"
+                                    placeholder="Tell me more about your project or question..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                Send Message
+                                <i data-lucide="send"></i>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -220,6 +470,7 @@
         </section>
     </div>
     <script src="assets/js/nav.js"></script>
+    <script src="assets/js/skills.js"></script>
     <script>
         lucide.createIcons();
     </script>

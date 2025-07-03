@@ -1,0 +1,194 @@
+/* ===================================
+   NAVIGATION STYLES
+   =================================== */
+
+/* Main Navigation Container */
+nav {
+    position: fixed;
+    left: 50%;
+    top: 1em;
+    transform: translateX(-50%);
+    
+    /* Appearance */
+    border: var(--liquid-border-color);
+    box-shadow: var(--liquid-box-shadow);
+    background-color: var(--liquid-bacground-color);
+    backdrop-filter: var(--liquid-backdrop-filter);
+    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
+
+    /* Layout */
+    color: var(--text-color);
+    width: fit-content;
+    height: fit-content;
+    border-radius: var(--radius-out);
+    z-index: 100;
+    padding: 0.5em;
+    
+    /* Transitions */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Navigation List */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0.1em;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+
+/* Navigation List Items */
+nav ul li {
+    margin: 0.25em;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+
+/* Navigation Links */
+nav ul li a {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: var(--radius-in);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+    opacity: 0.4;
+}
+
+/* Navigation Link Captions */
+nav ul li a .caption {
+    height: 0px;
+    scale: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Navigation Link Icons */
+nav ul li a i {
+    scale: 1.75;
+    padding: 0.5rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+}
+
+/* Navigation Link Hover Effects (Desktop) */
+@media screen and (min-width: 500px) {
+    nav ul li a:hover {
+        opacity: 1;
+    }
+    
+    nav ul li a:hover .caption {
+        height: 100%;
+        scale: 1;
+    }
+}
+
+/* Active Navigation State */
+nav .active {
+    background-color: var(--primary-color);
+    color: white;
+    opacity: 1;
+}
+
+nav .active .caption {
+    height: 100%;
+    scale: 1;
+}
+
+/* Mini Navigation State */
+nav.mini {
+    border-radius: 10em;
+}
+
+nav.mini a {
+    border-radius: 10em;
+    width: 1em !important;
+    height: 1em !important;
+}
+
+nav.mini a .caption {
+    display: none;
+}
+
+nav.mini a i {
+    scale: 1 !important;
+}
+
+/* Navigation Gradient Overlays */
+nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-out);
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.6) 0%,
+            transparent 50%,
+            transparent 100%);
+    opacity: 0.7;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-in);
+    background: linear-gradient(to top left,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 50%,
+            transparent 100%);
+    opacity: 0.5;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+nav.mini::before,
+nav.mini::after {
+    border-radius: 10em;
+}
+
+/* ===================================
+   RESPONSIVE NAVIGATION
+   =================================== */
+
+/* Tablet Navigation */
+@media screen and (max-width: 750px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        bottom: 1em !important;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%);
+    }
+    
+    nav ul {
+        display: flex;
+    }
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 500px) {
+    nav a {
+        width: 2em !important;
+        height: 2em !important;
+    }
+    
+    nav a span {
+        display: none;
+    }
+    
+    nav a i {
+        scale: 1.5 !important;
+    }
+}

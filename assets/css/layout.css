@@ -1,0 +1,185 @@
+/* ===================================
+   MAIN LAYOUT & GLOBAL STYLES
+   =================================== */
+
+/* Font Loading */
+@font-face {
+    font-family: "sugar-magic";
+    src: url("../fonts/sugarmagicpersonaluseonly-jemyo.otf") format("opentype");
+    font-display: swap;
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--background-color-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Typography Utilities */
+.border {
+    border: 4px solid var(--primary-color);
+}
+
+/* Item Headers */
+.item h2 {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border-radius: var(--radius-out);
+    color: var(--primary-color);
+    background-color: var(--background-color-secondary);
+    transition: all 0.5s ease-in-out;
+}
+
+.item h3 {
+    padding: 0.75rem;
+    margin: 0;
+    font-size: 1.25rem;
+    border-radius: var(--radius-out);
+    color: var(--text-color);
+    background-color: var(--background-color-tr);
+    backdrop-filter: blur(var(--blur));
+    transition: all 0.5s ease-in-out;
+}
+
+/* Main Wrapper */
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+/* Section Layout */
+section {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Specific Section Heights */
+section.hero {
+    height: 100vh;
+}
+
+section.about-me,
+section.projects,
+section.contact {
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 0;
+}
+
+/* Section Container */
+.section-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.section-header p {
+    color: var(--text-color);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===================================
+   RESPONSIVE LAYOUT
+   =================================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .section-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    section.about-me,
+    section.projects,
+    section.contact {
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+    
+    .wrapper {
+        padding-top: 80px; /* Account for fixed nav */
+    }
+    
+    .section-container {
+        padding: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    section.about-me,
+    section.projects,
+    section.contact {
+        padding: 1.5rem 0;
+        margin-top: 1rem;
+    }
+    
+    .wrapper {
+        padding-top: 60px;
+    }
+    
+    .section-container {
+        padding: 0.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Ensure hero section starts at the very top */
+section.hero {
+    position: relative;
+    top: 0;
+    scroll-margin-top: 0;
+}

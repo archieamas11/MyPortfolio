@@ -1,0 +1,162 @@
+/* ===================================
+   HERO SECTION STYLES
+   =================================== */
+
+/* Hero Section Layout */
+section.hero {
+    height: 100vh;
+    position: relative;
+    top: 0;
+    scroll-margin-top: 0;
+}
+
+/* Hero Typography */
+h1 {
+    font-family: "sugar-magic", sans-serif;
+    width: 100vw;
+    height: fit-content;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+    text-align: right;
+    font-size: calc(100vw / 6);
+    line-height: 0.8;
+    padding: 0;
+    margin: 0;
+}
+
+h1 strong {
+    color: var(--primary-color);
+    font-size: calc(100vw / 7.5);
+}
+
+subtitle {
+    font-family: "sugar-magic", sans-serif;
+    background: none;
+    color: var(--text-color);
+    font-size: calc(100vw / 20);
+    margin: 0 10px;
+    padding: 0;
+    width: 100vw;
+    text-align: right;
+}
+
+subtitle strong {
+    color: var(--primary-color);
+}
+
+/* Hero Layout Components */
+.heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-mini {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: end;
+    justify-content: end;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Animation Items */
+.item {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+    opacity: 0;
+    transform: translate(0, 100px);
+}
+
+/* Social Media Links */
+#social-list {
+    width: 98vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+
+#social-list a {
+    margin: 0.25em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-color);
+    transition: all 0.5s ease-in-out;
+    padding: 0.5em 1em;
+    border-radius: var(--radius-out);
+    animation: opacity 4s infinite reverse;
+    animation-delay: calc(var(--i) * 0.2s);
+    display: inline-flex;
+    align-items: center;
+}
+
+#social-list a:hover {
+    color: var(--background-color-primary);
+    background-color: var(--primary-color);
+}
+
+#social-list a i {
+    font-size: 1em !important;
+    margin-right: 0.5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+}
+
+/* Hero Animations */
+@keyframes opacity {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    50% { opacity: 0.3; }
+    75% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* ===================================
+   RESPONSIVE HERO SECTION
+   =================================== */
+
+/* Mobile Hero Typography */
+@media screen and (max-width: 500px) {
+    h1 {
+        text-align: center;
+    }
+    
+    subtitle {
+        text-align: center;
+    }
+}
+
+/* Tablet Hero Layout */
+@media screen and (max-width: 750px) {
+    .container-mini {
+        bottom: 50px;
+        margin-top: 50vw;
+        height: fit-content;
+    }
+    
+    #social-list {
+        justify-content: center;
+        margin: 20px 0 20vw 0;
+    }
+}
+
+/* Mobile Hero Layout */
+@media screen and (max-width: 500px) {
+    .container-mini {
+        bottom: 0;
+    }
+}
