@@ -3,22 +3,18 @@
    =================================== */
 
 /* Hero Section Layout */
-section.hero {
-    position: relative;
-    top: 0;
-    scroll-margin-top: 0;
-}
-
 /* Hero Typography */
+
 .hero h1 {
     font-family: "sugar-magic", sans-serif;
     width: 100vw;
+    height: fit-content;
     height: fit-content;
     transition: all 0.5s ease-in-out;
     z-index: 1;
     text-align: right;
     font-size: calc(100vw / 6);
-    line-height: 0.8;
+    line-height: 0.9;
     padding: 0;
     margin: 0;
 }
@@ -26,21 +22,6 @@ section.hero {
 .hero h1 strong {
     color: var(--primary-color);
     font-size: calc(100vw / 7.5);
-}
-
-subtitle {
-    font-family: "sugar-magic", sans-serif;
-    background: none;
-    color: var(--text-color);
-    font-size: calc(100vw / 20);
-    margin: 0 10px;
-    padding: 0;
-    width: 100vw;
-    text-align: right;
-}
-
-subtitle strong {
-    color: var(--primary-color);
 }
 
 /* Hero Layout Components */
@@ -54,12 +35,24 @@ subtitle strong {
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 98%;
+    height: 98vh;
     align-items: end;
     justify-content: end;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 750px) {
+        bottom: 50px;
+        margin-top: 50vw;
+        height: fit-content;
+
+        @media screen and (max-width: 500px) {
+            bottom: 0;
+            margin-top: 100vw;
+            /* height: 50vh; */
+        }
+    }
 }
 
 /* Hero Animation Items */
@@ -76,7 +69,7 @@ subtitle strong {
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
-    margin: 20px 0 20px 0;
+    margin: 20px 0 0 0;
 }
 
 #social-list a {
@@ -148,9 +141,7 @@ subtitle strong {
         text-align: center;
     }
 
-    subtitle {
-        text-align: center;
-    }
+
 }
 
 /* Tablet Hero Layout */
@@ -170,6 +161,8 @@ subtitle strong {
 /* Mobile Hero Layout */
 @media screen and (max-width: 500px) {
     .container-mini {
-        bottom: 10%;
+        bottom: 0;
+        margin-top: 80vw;
+        height: 50vh;
     }
 }
