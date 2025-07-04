@@ -675,6 +675,13 @@
     padding: 1rem;
     width: 95%;
     margin: 0 auto;
+    margin-top: 0.4rem;
+    background: var(--liquid-background-color);
+    border: var(--liquid-border-color);
+    box-shadow: var(--liquid-box-shadow);
+    backdrop-filter: var(--liquid-backdrop-filter);
+    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
+    border-radius: 6px;
 }
 
 .education-container:not(:last-child)::after {
