@@ -122,6 +122,10 @@ section.projects {
     font-size: var(--font-size-5xl, 2rem);
 }
 
+.project-description {
+    max-width: 600px;
+}
+
 .project-description p {
     color: var(--text-color, #333);
     line-height: 1.6;
@@ -134,6 +138,7 @@ section.projects {
     gap: 0.5rem;
     margin: 1rem 0;
 }
+
 
 .tech-tag {
     background: rgba(var(--primary-color-rgb), 0.1);
@@ -248,12 +253,12 @@ section.projects {
         width: 220px;
         height: 400px;
     }
-    
+
     .project-visual[data-type="desktop"] {
         width: 450px;
         height: 320px;
     }
-    
+
     .project-visual[data-type="website"] {
         width: 420px;
         height: 300px;
@@ -264,7 +269,7 @@ section.projects {
         height: 35px;
         border-width: 2px;
     }
-    
+
     .video-info-overlay {
         font-size: 0.7rem;
         padding: 0.4rem 0.8rem;
@@ -322,14 +327,14 @@ section.projects {
         height: 320px;
         padding: 20px 10px;
     }
-    
+
     .project-visual[data-type="desktop"] {
         width: 100%;
         max-width: 380px;
         height: 260px;
         padding: 25px 5px 5px 5px;
     }
-    
+
     .project-visual[data-type="website"] {
         width: 100%;
         max-width: 360px;
@@ -346,14 +351,14 @@ section.projects {
         height: 30px;
         border-width: 2px;
     }
-    
+
     .video-info-overlay {
         font-size: 0.65rem;
         padding: 0.3rem 0.6rem;
         bottom: 5px;
         left: 5px;
     }
-    
+
     /* Ensure videos don't auto-play on mobile to save data */
     .project-video {
         pointer-events: auto;
@@ -386,12 +391,12 @@ section.projects {
         height: 270px;
         padding: 15px 8px;
     }
-    
+
     .project-visual[data-type="desktop"] {
         height: 220px;
         padding: 20px 3px 3px 3px;
     }
-    
+
     .project-visual[data-type="website"] {
         height: 200px;
         padding: 25px 3px 3px 3px;
@@ -450,18 +455,18 @@ section.projects {
         height: 25px;
         border-width: 2px;
     }
-    
+
     .video-info-overlay {
         font-size: 0.6rem;
         padding: 0.25rem 0.5rem;
     }
 }
 
-/* Auto-playing video improvements */
+/* Auto-playing video */
 .project-video {
-    width: 400px;
+    width: 200px;
     height: 400px;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -492,7 +497,7 @@ section.projects {
     transition: opacity 0.3s ease;
 }
 
-.project-video:not([data-loading="true"]) + .project-fallback-image + .video-loading {
+.project-video:not([data-loading="true"])+.project-fallback-image+.video-loading {
     opacity: 0;
     pointer-events: none;
 }
@@ -507,8 +512,13 @@ section.projects {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Video info overlay */
@@ -517,14 +527,16 @@ section.projects {
     bottom: 10px;
     left: 10px;
     background: rgba(0, 0, 0, 0.8);
-    color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-medium);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--black-color);
+    border: var(--liquid-border-color);
+    box-shadow: var(--liquid-box-shadow);
+    background-color: var(--liquid-background-color);
+    backdrop-filter: var(--liquid-backdrop-filter);
+    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
@@ -558,13 +570,14 @@ section.projects {
 
 /* Mobile App Projects - Phone Frame */
 .project-visual[data-type="mobile"] {
-    width: 280px;
-    height: 500px;
+    width: 220px;
+    height: 490px;
+    margin: 0 auto;
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     border: 3px solid #333;
     border-radius: 30px;
-    padding: 25px 15px;
-    box-shadow: 
+    padding: 15px 15px;
+    box-shadow:
         0 0 0 2px #444,
         0 8px 25px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -575,28 +588,13 @@ section.projects {
 .project-visual[data-type="mobile"]::before {
     content: '';
     position: absolute;
-    top: 8px;
+    top: 5.5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 6px;
+    width: 40px;
+    height: 3px;
     background: #555;
     border-radius: 3px;
-    z-index: 4;
-}
-
-/* Home indicator */
-.project-visual[data-type="mobile"]::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: #555;
-    border-radius: 2px;
-    z-index: 4;
 }
 
 .project-visual[data-type="mobile"] video,
@@ -604,15 +602,14 @@ section.projects {
 .project-visual[data-type="mobile"] .project-video,
 .project-visual[data-type="mobile"] .project-fallback-image {
     width: 100%;
-    height: calc(100% - 50px);
-    margin-top: 25px;
+    height: calc(100% - 2px);
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .project-visual[data-type="mobile"]:hover {
     transform: translateY(-8px) rotateY(3deg);
-    box-shadow: 
+    box-shadow:
         0 0 0 2px #444,
         0 15px 40px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -620,8 +617,8 @@ section.projects {
 
 /* Desktop App Projects - Window Frame */
 .project-visual[data-type="desktop"] {
-    width: 550px;
-    height: 380px;
+    width: 500px;
+    height: 300px;
     background: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -653,7 +650,7 @@ section.projects {
     color: #ff5f57;
     letter-spacing: 3px;
     z-index: 4;
-    text-shadow: 
+    text-shadow:
         4px 0 0 #ffbd2e,
         8px 0 0 #28ca42;
 }
@@ -662,10 +659,11 @@ section.projects {
 .project-visual[data-type="desktop"] img,
 .project-visual[data-type="desktop"] .project-video,
 .project-visual[data-type="desktop"] .project-fallback-image {
-    width: 100%;
-    height: calc(100% - 30px);
-    border-radius: 0 0 5px 5px;
+    width: 98%;
+    height: calc(110% - 35px);
+    border-radius: 8px;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .project-visual[data-type="desktop"]:hover {
@@ -675,14 +673,14 @@ section.projects {
 
 /* Website Projects - Browser Frame */
 .project-visual[data-type="website"] {
-    width: 500px;
-    height: 350px;
+    height: 320px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 40px 5px 5px 5px;
+    padding: 40px 5px 0 5px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     position: relative;
+    
 }
 
 /* Browser toolbar */
@@ -693,9 +691,8 @@ section.projects {
     left: 0;
     right: 0;
     height: 40px;
-    background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+    background: white;
     border-radius: 8px 8px 0 0;
-    border-bottom: 1px solid #ddd;
 }
 
 /* Address bar and controls */
@@ -706,7 +703,7 @@ section.projects {
     left: 15px;
     right: 15px;
     height: 22px;
-    background: white;
+    background: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
     border: 1px solid #ccc;
     border-radius: 12px;
     font-size: 11px;
@@ -722,9 +719,10 @@ section.projects {
 .project-visual[data-type="website"] img,
 .project-visual[data-type="website"] .project-video,
 .project-visual[data-type="website"] .project-fallback-image {
-    width: 100%;
-    height: calc(100% - 40px);
-    border-radius: 0 0 5px 5px;
+    width: 98%;
+    margin: 0 auto;
+    height: calc(100% - 10px);
+    border-radius: 8px;
     object-fit: cover;
 }
 
@@ -736,9 +734,7 @@ section.projects {
 /* Enhanced video info overlays with device icons */
 .project-visual[data-type="mobile"] .video-info-overlay {
     bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    left: 20%;
 }
 
 .project-visual[data-type="mobile"] .video-info-overlay::before {
