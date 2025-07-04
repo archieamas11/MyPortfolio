@@ -97,7 +97,7 @@
 
     /* --primary-color: light-dark(#226655, #4affbd); */
     --text-color: light-dark(#000000, #ffffff);
-    --background-color-primary: light-dark(#ffffff, #292929);
+    --background-color-primary: light-dark(#ffffff, #29292900);
     --background-color-secondary: light-dark(#dbdbdb, #303030);
 
     /* IOS26 Liquid Glass Inspired */
@@ -107,10 +107,6 @@
     --liquid-background-color: rgba(255, 255, 255, 0.025);
     --liquid-border-color: 1px solid rgba(255, 255, 255, 0.5);
     --liquid-backdrop-filter: blur(4px);
-
-
-
-
 
     --background-color-tr: light-dark(#ddddddbb, #55555588);
     --font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;

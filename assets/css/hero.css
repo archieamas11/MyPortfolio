@@ -4,14 +4,13 @@
 
 /* Hero Section Layout */
 section.hero {
-    height: 100vh;
     position: relative;
     top: 0;
     scroll-margin-top: 0;
 }
 
 /* Hero Typography */
-h1 {
+.hero h1 {
     font-family: "sugar-magic", sans-serif;
     width: 100vw;
     height: fit-content;
@@ -24,7 +23,7 @@ h1 {
     margin: 0;
 }
 
-h1 strong {
+.hero h1 strong {
     color: var(--primary-color);
     font-size: calc(100vw / 7.5);
 }
@@ -118,11 +117,25 @@ subtitle strong {
 
 /* Hero Animations */
 @keyframes opacity {
-    0% { opacity: 1; }
-    25% { opacity: 1; }
-    50% { opacity: 0.3; }
-    75% { opacity: 1; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* ===================================
@@ -131,10 +144,10 @@ subtitle strong {
 
 /* Mobile Hero Typography */
 @media screen and (max-width: 500px) {
-    h1 {
+    .hero h1 {
         text-align: center;
     }
-    
+
     subtitle {
         text-align: center;
     }
@@ -147,7 +160,7 @@ subtitle strong {
         margin-top: 50vw;
         height: fit-content;
     }
-    
+
     #social-list {
         justify-content: center;
         margin: 20px 0 20vw 0;
@@ -157,6 +170,6 @@ subtitle strong {
 /* Mobile Hero Layout */
 @media screen and (max-width: 500px) {
     .container-mini {
-        bottom: 0;
+        bottom: 10%;
     }
 }

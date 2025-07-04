@@ -109,8 +109,8 @@ nav.mini {
 
 nav.mini a {
     border-radius: 10em;
-    width: 1em !important;
-    height: 1em !important;
+    width: 1.5em !important;
+    height: 1.5em !important;
 }
 
 nav.mini a .caption {

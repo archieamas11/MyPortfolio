@@ -27,16 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(skillsGrid);
     }
     
-    // Add hover sound effect (optional - requires audio files)
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            // Optional: Add subtle hover sound
-            // const audio = new Audio('path/to/hover-sound.mp3');
-            // audio.volume = 0.1;
-            // audio.play().catch(() => {}); // Ignore if autoplay is blocked
-        });
-    });
-    
     // Skill item click handler for potential future features
     skillItems.forEach(item => {
         item.addEventListener('click', () => {
