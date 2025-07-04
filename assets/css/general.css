@@ -6,7 +6,8 @@
 }
 
 :root {
-    color-scheme: light dark;
+    /* color-scheme: light dark; */
+    color-scheme: dark;
     --primary-color: #4058a0;
     /* --primary-color: light-dark(#226655, #4affbd); */
     /* --primary-color: light-dark(#1d2c5888, #4058a0); */
@@ -97,7 +98,8 @@
 
     /* --primary-color: light-dark(#226655, #4affbd); */
     --text-color: light-dark(#000000, #ffffff);
-    --background-color-primary: light-dark(#ffffff, #29292900);
+    /* --background-color-primary: light-dark(#ffffff, #000000); */
+    --background-color-primary: #000000;
     --background-color-secondary: light-dark(#dbdbdb, #303030);
 
     /* IOS26 Liquid Glass Inspired */

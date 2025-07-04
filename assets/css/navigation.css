@@ -12,7 +12,7 @@ nav {
     /* Appearance */
     border: var(--liquid-border-color);
     box-shadow: var(--liquid-box-shadow);
-    background-color: var(--liquid-bacground-color);
+    background-color: var(--liquid-background-color);
     backdrop-filter: var(--liquid-backdrop-filter);
     -webkit-backdrop-filter: var(--liquid-backdrop-filter);
 
