@@ -89,8 +89,6 @@ section.contact {
 .contact-form form {
     box-shadow: var(--liquid-box-shadow);
     background-color: var(--liquid-background-color);
-    backdrop-filter: var(--liquid-backdrop-filter);
-    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
     border-radius: var(--border-radius-lg);
     padding: 2rem;
     border: 2px solid rgba(var(--primary-color-rgb), 0.2);
