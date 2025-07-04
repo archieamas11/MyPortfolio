@@ -247,7 +247,8 @@
 
 .about-status {
     margin-top: 1rem;
-    width: 15rem;
+    width: 100%;
+    max-width: 15rem;
     border: solid 1px var(--primary-color, #007bff);
     padding: 0.1rem 0.5rem;
     display: flex;
@@ -256,11 +257,16 @@
     margin: 1rem 0;
     background-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.1);
     border-radius: 50px;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
 }
 
 .status-label {
     font-size: var(--font-size-xs);
     color: var(--gray-400);
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.4;
 }
 
 /* Details List */
@@ -810,11 +816,19 @@
         width: 100%;
     }
 
+    .about-name h4 {
+        font-size: 1.3rem;
+    }
+
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
     .status-label {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        white-space: normal;
-        /* Allow text wrapping on very small screens */
+        font-size: var(--font-size-2xs);
+        text-align: center;
     }
 }
 
@@ -875,6 +889,17 @@
 
     .about-name h4 {
         font-size: 1.3rem;
+    }
+
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .status-label {
+        font-size: var(--font-size-2xs);
+        text-align: center;
     }
 
     .interest-grid {
@@ -1015,6 +1040,17 @@
     .about-description p {
         text-align: center;
         font-size: var(--font-size-sm);
+    }
+
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .status-label {
+        font-size: var(--font-size-2xs);
+        text-align: center;
     }
 
     .interest-grid {
@@ -1217,6 +1253,21 @@
         min-width: unset;
         width: 100%;
     }
+
+    .about-name h4 {
+        font-size: 1.3rem;
+    }
+
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .status-label {
+        font-size: var(--font-size-2xs);
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1278,6 +1329,17 @@
         font-size: 1.3rem;
     }
 
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .status-label {
+        font-size: var(--font-size-2xs);
+        text-align: center;
+    }
+
     .interest-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 0.8rem;
@@ -1331,6 +1393,31 @@
         padding: 0.2rem 0.35rem;
         top: 0.4rem;
         right: 0.4rem;
+    }
+
+    .education-container {
+        margin-bottom: 2rem !important;
+        flex-direction: column;
+    }
+
+    .education-logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .year-tag {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .education-highlights {
+        margin-top: 0.8rem;
+    }
+
+    .highlight-item {
+        padding: 0.3rem 0.6rem;
+        font-size: var(--font-size-xs);
     }
 }
 
@@ -1391,6 +1478,17 @@
     .about-description p {
         text-align: center;
         font-size: var(--font-size-sm);
+    }
+
+    .about-status {
+        max-width: 12rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0.8rem 0;
+    }
+
+    .status-label {
+        font-size: var(--font-size-2xs);
+        text-align: center;
     }
 
     .interest-grid {
@@ -1541,5 +1639,32 @@
 
     .skill-item:hover::after {
         opacity: 1;
+    }
+
+    .education-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .education-logo {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+
+    .education-logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .education-info {
+        text-align: left;
+    }
+
+    .school-name h4 {
+        font-size: var(--font-size-lg);
+    }
+
+    .educ-degree-tag h5 {
+        font-size: var(--font-size-base);
     }
 }

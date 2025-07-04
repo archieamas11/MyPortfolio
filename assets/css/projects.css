@@ -700,7 +700,7 @@ section.projects {
 
 /* Address bar and controls */
 .project-visual[data-type="website"]::after {
-    content: '⬅ ➡ 🔄 🔒 your-website.com';
+    content: '⬅ ➡ 🔄 🔒 cemeterease.kesug.com';
     position: absolute;
     top: 10px;
     left: 15px;
