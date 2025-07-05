@@ -1,0 +1,164 @@
+/* ================================
+   FOOTER STYLES
+   ================================ */
+
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.footer-built,
+.footer-updated {
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-built {
+    font-weight: 500;
+    background: linear-gradient(45deg, #4058a0, #6ec3d8, #525b77, #6c757d);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease-in-out infinite;
+    position: relative;
+}
+
+.footer-built::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #4058a0, #6ec3d8);
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.footer-built:hover::after {
+    width: 100%;
+}
+
+.footer-updated {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* Gradient animation for the "Built with love" text */
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-built,
+    .footer-updated {
+        font-size: 0.8rem;
+    }
+
+    .footer-updated {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        gap: 0.25rem;
+    }
+
+    .footer-built {
+        font-size: 0.75rem;
+    }
+
+    .footer-updated {
+        font-size: 0.7rem;
+    }
+}
+
+/* Hover effects */
+.footer:hover .footer-built {
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.footer:hover .footer-updated {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Smooth transitions */
+.footer-built,
+.footer-updated {
+    transition: all 0.3s ease;
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1d1d1d 100%);
+    }
+}
+
+/* Light mode support (if needed) */
+@media (prefers-color-scheme: light) {
+    .footer {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-built,
+    .footer-updated {
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    .footer::before {
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+    }
+}

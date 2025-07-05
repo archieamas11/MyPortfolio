@@ -24,12 +24,9 @@
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/projects.css">
     <link rel="stylesheet" href="assets/css/contact.css">
-
+    <link rel="stylesheet" href="assets/css/footer.css">
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
-    <script src="https://unpkg.com/lucide@latest"></script>
-
 </head>
 
 <body>
@@ -298,6 +295,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="skill-item" data-skill-level="intermediate">
+                                    <i class="devicon-figma-plain colored"></i>
+                                    <div class="skill-info">
+                                        <h6>Figma</h6>
+                                        <span class="experience">2+ years</span>
+                                        <div class="skill-progress">
+                                            <div class="progress-bar" style="--progress: 50%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -455,173 +462,182 @@
                 </div>
 
                 <div class="project-container">
-                    <div class="project-info">
-                        <div class="project-name">
-                            <h4>CemeterEase</h4>
-                        </div>
-                        <div class="project-description">
-                            <p>A smart cemetery management system that transforms how people find gravesites. Features
-                                interactive QGIS-powered maps with Google Maps API integration, real-time search, GPS
-                                navigation, seamless record management, and cloud storage API for secure image storage.
-                                No more wandering around looking for that one grave!</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Bootstrap</span>
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">PHP Mailer</span>
-                                <span class="tech-tag">JQuery</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">QGIS</span>
-                                <span class="tech-tag">Leaflet</span>
-                                <span class="tech-tag">G-Maps API</span>
-                                <span class="tech-tag">Google OAuth 2.0</span>
-                                <span class="tech-tag">Cloudinary API</span>
-                                <span class="tech-tag">SMS API</span>
-                                <span class="tech-tag">REST API</span>
-                                <span class="tech-tag">PUSHER API</span>
-                                <span class="tech-tag">Tidio API</span>
+                    <div class="project-wrapper">
+                        <div class="project-info">
+                            <div class="project-name">
+                                <h4>CemeterEase</h4>
+                            </div>
+                            <div class="project-description">
+                                <p>A smart cemetery management system that transforms how people find gravesites.
+                                    Features
+                                    interactive QGIS-powered maps with Google Maps API integration, real-time search,
+                                    GPS
+                                    navigation, seamless record management, and cloud storage API for secure image
+                                    storage.
+                                    No more wandering around looking for that one grave!</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">PHP Mailer</span>
+                                    <span class="tech-tag">JQuery</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">QGIS</span>
+                                    <span class="tech-tag">Leaflet</span>
+                                    <span class="tech-tag">G-Maps API</span>
+                                    <span class="tech-tag">Google OAuth 2.0</span>
+                                    <span class="tech-tag">Cloudinary API</span>
+                                    <span class="tech-tag">SMS API</span>
+                                    <span class="tech-tag">REST API</span>
+                                    <span class="tech-tag">PUSHER API</span>
+                                    <span class="tech-tag">Tidio API</span>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://cemeterease.kesug.com" class="project-link primary">
+                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
+                                </a>
+                                <a href="https://github.com/archieamas11/cemeterease" class="project-link secondary">
+                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
-                            </a>
-                            <a href="https://github.com/archieamas11/cemeterease" class="project-link secondary">
-                                <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="project-visual" data-type="website">
-                        <!-- Auto-playing video with fallback to image -->
-                        <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
-                            preload="metadata" muted loop autoplay playsinline
-                            src="assets/images/projects/cemeterease-demo.mp4">
-                            <!-- Fallback for browsers that don't support video -->
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="project-visual" data-type="website">
+                            <!-- Auto-playing video with fallback to image -->
+                            <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
+                                preload="metadata" muted loop autoplay playsinline
+                                src="assets/images/projects/cemeterease-demo.mp4">
+                                <!-- Fallback for browsers that don't support video -->
+                                Your browser does not support the video tag.
+                            </video>
 
-                        <!-- Fallback image if video fails to load -->
-                        <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
-                            alt="CemeterEase project showcase" loading="lazy" style="display: none;" />
+                            <!-- Fallback image if video fails to load -->
+                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
+                                alt="CemeterEase project showcase" loading="lazy" style="display: none;" />
 
-                        <!-- Loading indicator -->
-                        <div class="video-loading">
-                            <div class="loading-spinner"></div>
-                        </div>
+                            <!-- Loading indicator -->
+                            <div class="video-loading">
+                                <div class="loading-spinner"></div>
+                            </div>
 
-                        <!-- Video info overlay -->
-                        <div class="video-info-overlay">
-                            <span>Website Demo</span>
+                            <!-- Video info overlay -->
+                            <div class="video-info-overlay">
+                                <span>Website Demo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-container">
-                    <div class="project-info">
-                        <div class="project-name">
-                            <h4>Shoptify</h4>
-                        </div>
-                        <div class="project-description">
-                            <p>A sleek desktop e-commerce app built with Java Swing that proves desktop apps can be
-                                beautiful too. Complete shopping experience with cart management, order processing, and
-                                modern UI design. Amazon vibes, desktop style!</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Swing</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">OOP</span>
-                                <span class="tech-tag">Desktop App</span>
+                    <div class="project-wrapper">
+                        <div class="project-info">
+                            <div class="project-name">
+                                <h4>Shoptify</h4>
+                            </div>
+                            <div class="project-description">
+                                <p>A sleek desktop e-commerce app built with Java Swing that proves desktop apps can be
+                                    beautiful too. Complete shopping experience with cart management, order processing,
+                                    and
+                                    modern UI design. Amazon vibes, desktop style!</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Swing</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">OOP</span>
+                                    <span class="tech-tag">Desktop App</span>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://cemeterease.kesug.com" class="project-link primary">
+                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
+
+                                </a>
+                                <a href="https://github.com/archieamas11/shoptify" class="project-link secondary">
+                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
 
-                            </a>
-                            <a href="https://github.com/archieamas11/shoptify" class="project-link secondary">
-                                <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                            </a>
-                        </div>
-                    </div>
+                        <div class="project-visual" data-type="desktop">
+                            <!-- Auto-playing video with fallback to image -->
+                            <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
+                                preload="metadata" muted loop autoplay playsinline
+                                src="assets/images/projects/cemeterease-demo.mp4">
+                                <!-- Fallback for browsers that don't support video -->
+                                Your browser does not support the video tag.
+                            </video>
 
-                    <div class="project-visual" data-type="desktop">
-                        <!-- Auto-playing video with fallback to image -->
-                        <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
-                            preload="metadata" muted loop autoplay playsinline
-                            src="assets/images/projects/cemeterease-demo.mp4">
-                            <!-- Fallback for browsers that don't support video -->
-                            Your browser does not support the video tag.
-                        </video>
+                            <!-- Fallback image if video fails to load -->
+                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
+                                alt="Cemeterease project showcase" loading="lazy" style="display: none;" />
 
-                        <!-- Fallback image if video fails to load -->
-                        <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
-                            alt="Cemeterease project showcase" loading="lazy" style="display: none;" />
+                            <!-- Loading indicator -->
+                            <div class="video-loading">
+                                <div class="loading-spinner"></div>
+                            </div>
 
-                        <!-- Loading indicator -->
-                        <div class="video-loading">
-                            <div class="loading-spinner"></div>
-                        </div>
-
-                        <!-- Video info overlay -->
-                        <div class="video-info-overlay">
-                            <span>Desktop App Demo</span>
+                            <!-- Video info overlay -->
+                            <div class="video-info-overlay">
+                                <span>Desktop App Demo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-container">
-                    <div class="project-info">
-                        <div class="project-name">
-                            <h4>Self Thoughts</h4>
-                        </div>
-                        <div class="project-description">
-                            <p>My digital diary built with React Native - where thoughts meet code! Write journal
-                                entries, reflect on life, and sync across devices with Firebase. Works offline too,
-                                because thoughts don't wait for WiFi.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React Native</span>
-                                <span class="tech-tag">Expo</span>
-                                <span class="tech-tag">SQLite</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">Mobile App</span>
+                    <div class="project-wrapper">
+                        <div class="project-info">
+                            <div class="project-name">
+                                <h4>Self Thoughts</h4>
+                            </div>
+                            <div class="project-description">
+                                <p>My digital diary built with React Native - where thoughts meet code! Write journal
+                                    entries, reflect on life, and sync across devices with Firebase. Works offline too,
+                                    because thoughts don't wait for WiFi.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Expo</span>
+                                    <span class="tech-tag">SQLite</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">Mobile App</span>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://cemeterease.kesug.com" class="project-link primary">
+                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
+
+                                </a>
+                                <a href="https://github.com/archieamas11/self-thoughts" class="project-link secondary">
+                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
+                        <div class="project-visual" data-type="mobile">
+                            <!-- Auto-playing video with fallback to image -->
+                            <video class="project-video" poster="assets/images/projects/self-thoughts.jpg"
+                                preload="metadata" muted loop autoplay playsinline
+                                src="assets/images/projects/self-thoughts-demo.mp4">
+                                <!-- Fallback for browsers that don't support video -->
+                                Your browser does not support the video tag.
+                            </video>
 
-                            </a>
-                            <a href="https://github.com/archieamas11/self-thoughts" class="project-link secondary">
-                                <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                            </a>
-                        </div>
-                    </div>
+                            <!-- Fallback image if video fails to load -->
+                            <img class="project-fallback-image" src="assets/images/projects/self-thoughts.jpg"
+                                alt="Self Thoughts project showcase" loading="lazy" style="display: none;" />
 
-                    <div class="project-visual" data-type="mobile">
-                        <!-- Auto-playing video with fallback to image -->
-                        <video class="project-video" poster="assets/images/projects/self-thoughts.jpg"
-                            preload="metadata" muted loop autoplay playsinline
-                            src="assets/images/projects/self-thoughts-demo.mp4">
-                            <!-- Fallback for browsers that don't support video -->
-                            Your browser does not support the video tag.
-                        </video>
+                            <!-- Loading indicator -->
+                            <div class="video-loading">
+                                <div class="loading-spinner"></div>
+                            </div>
 
-                        <!-- Fallback image if video fails to load -->
-                        <img class="project-fallback-image" src="assets/images/projects/self-thoughts.jpg"
-                            alt="Self Thoughts project showcase" loading="lazy" style="display: none;" />
-
-                        <!-- Loading indicator -->
-                        <div class="video-loading">
-                            <div class="loading-spinner"></div>
-                        </div>
-
-                        <!-- Video info overlay -->
-                        <div class="video-info-overlay">
-                            <span>Mobile App Demo</span>
+                            <!-- Video info overlay -->
+                            <div class="video-info-overlay">
+                                <span>Mobile App Demo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -731,13 +747,26 @@
             </div>
         </section>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p class="footer-built">Built with ❤️ using HTML, CSS & JavaScript</p>
+                <p class="footer-updated">Last updated: July 2025</p>
+            </div>
+        </div>
+    </footer>
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/skills.js"></script>
     <script src="assets/js/projects.js"></script>
-    <script>
-        lucide.createIcons();
+    <script src="assets/js/lucide.min.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            // Update current year dynamically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
     </script>
-
 </body>
 
 </html>

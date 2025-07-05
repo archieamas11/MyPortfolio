@@ -961,6 +961,7 @@
     .education-container {
         margin-bottom: 2rem !important;
         flex-direction: column;
+        width: 90%;
     }
 
     .education-logo img {
@@ -1211,7 +1212,7 @@
 
     .education-logo {
         align-self: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .education-logo img {
@@ -1397,7 +1398,6 @@
     }
 
     .education-container {
-        margin-bottom: 2rem !important;
         flex-direction: column;
     }
 
