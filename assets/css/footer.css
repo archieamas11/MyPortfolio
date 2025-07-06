@@ -138,27 +138,3 @@
 .footer-updated {
     transition: all 0.3s ease;
 }
-
-/* Dark mode support (if needed) */
-@media (prefers-color-scheme: dark) {
-    .footer {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1d1d1d 100%);
-    }
-}
-
-/* Light mode support (if needed) */
-@media (prefers-color-scheme: light) {
-    .footer {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .footer-built,
-    .footer-updated {
-        color: rgba(0, 0, 0, 0.7);
-    }
-
-    .footer::before {
-        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
-    }
-}

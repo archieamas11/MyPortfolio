@@ -675,7 +675,6 @@ section.projects {
 
 /* Desktop App Projects - Window Frame */
 .project-visual[data-type="desktop"] {
-    width: 500px;
     height: 300px;
     background: #f0f0f0;
     border: 1px solid #ddd;
@@ -718,7 +717,7 @@ section.projects {
 .project-visual[data-type="desktop"] .project-video,
 .project-visual[data-type="desktop"] .project-fallback-image {
     width: 98%;
-    height: calc(110% - 35px);
+    height: calc(100% - 10px);
     border-radius: 8px;
     object-fit: cover;
     margin: 0 auto;

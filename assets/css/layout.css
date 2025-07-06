@@ -12,6 +12,7 @@
 /* Global Styles */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5em;
 }
 
 body {
@@ -23,15 +24,17 @@ body {
     color: var(--text-color);
     scroll-behavior: smooth;
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 4em 0 0 0;
+    width: 100vw;
+    height: 100vh;
     transition: all 0.5s ease-in-out;
 
     @media screen and (max-width: 300px) {
         opacity: 0.5;
     }
-
 }
+
+
 
 /* Typography Utilities */
 .border {
@@ -45,30 +48,76 @@ body {
     margin: 0 auto;
 }
 
-/* Item Headers */
+/* Hero Container */
 .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    #logo {
+        background-color: var(--primary-color);
+        height: 250px;
+        width: 250px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: var(--radius-out);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        margin: 10px;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        @media screen and (max-height: 768px) {
+            height: 50px;
+            width: 50px;
+        }
+
+        @media screen and (max-width: 500px) {
+            position: fixed;
+            top: 0;
+            margin: 0;
+            right: 0;
+            width: 100%;
+            height: 95vw;
+            border-radius: 0 0 var(--radius-out) var(--radius-out);
+        }
+
+        @media screen and (max-width:375px) {
+            position: fixed;
+            top: 0;
+            margin: 0;
+            right: 0;
+            width: 100%;
+            height: 80vw;
+            border-radius: 0 0 var(--radius-out) var(--radius-out);
+        }
+
+        &.scrolled {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+            /* transition: all 0.5s ease-in-out; */
+            z-index: 100;
+        }
+    }
 }
 
-/* Hero Layout Components */
 .social-wrapper {
     position: relative;
     bottom: 0;
     left: 0;
-    height: 98vh;
+    width: 100%;
+    height: 100vh;
     align-items: end;
     justify-content: end;
     display: flex;
     flex-direction: column;
-
-    @media screen and (max-width: 750px) {
-        bottom: 50px;
-        margin-top: 50vw;
-        height: fit-content;
-
-        @media screen and (max-width: 500px) {
-            bottom: 0;
-            margin-top: 100vw;
-            /* height: 50vh; */
-        }
-    }
 }

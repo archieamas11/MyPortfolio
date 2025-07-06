@@ -1,79 +1,73 @@
 /* ===================================
    HERO SECTION STYLES
    =================================== */
-
-/* Hero Section Layout */
 /* Hero Typography */
-
-
-
 .hero-container h1 {
     font-family: "sugar-magic", sans-serif;
-    width: 100vw;
-    height: fit-content;
+    width: 100%;
     height: fit-content;
     transition: all 0.5s ease-in-out;
     z-index: 1;
     text-align: right;
-    font-size: calc(100vw / 6);
+    font-size: calc(100vw / 6.5);
     line-height: 0.9;
     padding: 0;
     margin: 0;
+    margin-bottom: 10px;
 }
 
 .hero-container h1 strong {
     color: var(--primary-color);
-    font-size: calc(100vw / 7.5);
+    /* font-size: calc(100vw / 7.5); */
 }
-
-
-
-/* Hero Animation Items */
 
 /* Social Media Links */
 #social-list {
-    width: 98vw;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
-    margin: 20px 0 0 0;
+    margin: 20px 0 100px 0;
+
+    @media screen and (max-width: 750px) {
+        justify-content: center;
+        margin: 20px 0 20vw 0;
+    }
+
+    a {
+        margin: 0.25em;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--text-color);
+        transition: all 0.5s ease-in-out;
+        padding: 0.5em 1em;
+        border-radius: var(--radius-out);
+        animation: opacity 4s infinite reverse;
+        animation-delay: calc(var(--i) * 0.2s);
+
+        &:hover {
+            color: var(--background-color-primary);
+            background-color: var(--primary-color);
+        }
+
+        i {
+            font-size: 1em !important;
+            margin-right: 0.5em;
+            display: none;
+        }
+    }
 }
 
-#social-list a {
-    margin: 0.25em;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: var(--text-color);
-    transition: all 0.5s ease-in-out;
-    padding: 0.5em 1em;
-    border-radius: var(--radius-out);
-    animation: opacity 4s infinite reverse;
-    animation-delay: calc(var(--i) * 0.2s);
-    display: inline-flex;
-    align-items: center;
-}
-
-#social-list a:hover {
-    color: var(--background-color-primary);
-    background-color: var(--primary-color);
-}
-
-#social-list a i {
-    font-size: 1em !important;
-    margin-right: 0.5em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-
-.social-icon {
+/* #social-list {
+    width: max-content;
+    max-width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    gap: 0.5rem;
+    margin: 20px 0 0 0;
+    border: solid yellow;
 }
 
 /* Hero Animations */
@@ -102,30 +96,41 @@
 /* ===================================
    RESPONSIVE HERO SECTION
    =================================== */
-
 /* Tablet Hero Layout */
-@media screen and (max-width: 750px) {
-    .social-wrapper {
-        bottom: 50px;
-        margin-top: 50vw;
-        height: fit-content;
+@media (max-width: 768px) {
+    .hero-container {
+        margin-bottom: 5rem;
+    }
+
+    .hero-container h1 {
+        text-align: center;
     }
 
     #social-list {
-        justify-content: center;
-        margin: 20px 0 20vw 0;
+        text-align: center;
+
     }
 }
 
 /* Mobile Hero Layout */
-@media screen and (max-width: 500px) {
+@media (max-width: 480px) {
     .hero-container h1 {
         text-align: center;
     }
 
     .social-wrapper {
         bottom: 0;
-        margin-top: 80vw;
-        height: 50vh;
+        margin-top: 100vw;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 375px) {
+    .social-wrapper {
+        height: 28vh;
+    }
+
+    #social-list a {
+        font-size: 0.75em;
     }
 }

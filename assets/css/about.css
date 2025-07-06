@@ -54,13 +54,13 @@
     left: 10px;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 1px;
     background-color: var(--primary-color, #007bff);
 }
 
 .tree-node {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-left: 2rem;
 }
 
@@ -103,7 +103,6 @@
     border-radius: 8px;
     border: 2px solid rgba(var(--primary-color-rgb, 0, 123, 255), 0.2);
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
 .node-content::before {
@@ -172,17 +171,14 @@
 }
 
 /* About Profile Styles */
-.about-visual {
-    flex-shrink: 0;
-}
-
 .about-visual img {
     border-radius: 12px;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 3px solid var(--primary-color, #007bff);
+    transition: border 0.3s ease, border-color 0.3s ease;
 }
 
 .about-info {
@@ -989,15 +985,12 @@
     }
 
     .tree-title {
-        font-size: 1.3rem;
-        padding-left: 1.5rem;
+        font-size: 1.75rem;
         text-align: center;
-        margin-bottom: 1rem;
     }
 
     .tree-title::before {
         display: none;
-        /* Hide decorative elements on very small screens */
     }
 
     .tree-branch {
@@ -1033,7 +1026,7 @@
     }
 
     .about-name h4 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         text-align: center;
     }
 
@@ -1043,13 +1036,13 @@
     }
 
     .about-status {
-        max-width: 12rem;
-        padding: 0.2rem 0.8rem;
-        margin: 0.8rem 0;
+        max-width: 15rem;
+        margin: 0 auto;
+        margin-top: 1.25rem;
     }
 
     .status-label {
-        font-size: var(--font-size-2xs);
+        font-size: var(--font-size-xs);
         text-align: center;
     }
 
@@ -1110,95 +1103,6 @@
         right: 0.3rem;
     }
 
-    .skill-item:hover {
-        transform: translateY(-2px) scale(1.01);
-    }
-
-    .skill-item[data-skill-level="advanced"] {
-        border-color: rgba(40, 167, 69, 0.3);
-    }
-
-    .skill-item[data-skill-level="advanced"]:hover {
-        border-color: rgba(40, 167, 69, 0.6);
-        box-shadow:
-            var(--liquid-box-shadow),
-            0 10px 25px rgba(40, 167, 69, 0.2),
-            0 0 20px rgba(40, 167, 69, 0.1);
-    }
-
-    .skill-item[data-skill-level="advanced"] .progress-bar {
-        background: linear-gradient(90deg,
-                rgba(40, 167, 69, 0.6),
-                rgba(40, 167, 69, 1));
-    }
-
-    .skill-item[data-skill-level="intermediate"] {
-        border-color: rgba(255, 193, 7, 0.3);
-    }
-
-    .skill-item[data-skill-level="intermediate"]:hover {
-        border-color: rgba(255, 193, 7, 0.6);
-        box-shadow:
-            var(--liquid-box-shadow),
-            0 10px 25px rgba(255, 193, 7, 0.2),
-            0 0 20px rgba(255, 193, 7, 0.1);
-    }
-
-    .skill-item[data-skill-level="intermediate"] .progress-bar {
-        background: linear-gradient(90deg,
-                rgba(255, 193, 7, 0.6),
-                rgba(255, 193, 7, 1));
-    }
-
-    .skill-item[data-skill-level="beginner"] {
-        border-color: rgba(220, 53, 69, 0.3);
-    }
-
-    .skill-item[data-skill-level="beginner"]:hover {
-        border-color: rgba(220, 53, 69, 0.6);
-        box-shadow:
-            var(--liquid-box-shadow),
-            0 10px 25px rgba(220, 53, 69, 0.2),
-            0 0 20px rgba(220, 53, 69, 0.1);
-    }
-
-    .skill-item[data-skill-level="beginner"] .progress-bar {
-        background: linear-gradient(90deg,
-                rgba(220, 53, 69, 0.6),
-                rgba(220, 53, 69, 1));
-    }
-
-    /* Skill Level Badge */
-    .skill-item::after {
-        content: attr(data-skill-level);
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        font-size: 0.6rem;
-        font-weight: var(--font-weight-bold);
-        text-transform: uppercase;
-        padding: 0.2rem 0.4rem;
-        border-radius: var(--border-radius-sm);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    .skill-item[data-skill-level="advanced"]::after {
-        background: rgba(40, 167, 69, 0.8);
-        color: white;
-    }
-
-    .skill-item[data-skill-level="intermediate"]::after {
-        background: rgba(255, 193, 7, 0.8);
-        color: #212529;
-    }
-
-    .skill-item[data-skill-level="beginner"]::after {
-        background: rgba(220, 53, 69, 0.8);
-        color: white;
-    }
-
     .skill-item:hover::after {
         opacity: 1;
     }
@@ -1206,6 +1110,7 @@
     .education-container {
         flex-direction: column;
         text-align: center;
+        width: 90%;
     }
 
     .education-logo {
