@@ -3,29 +3,72 @@
    =================================== */
 
 /* Main Navigation Container */
+
+
+.liquidGlass-wrapper {
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    overflow: hidden;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.liquidGlass-effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    backdrop-filter: var(--liquid-backdrop-filter);
+    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
+    filter: url(#glass-distortion);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.liquidGlass-tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.liquidGlass-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    border: var(--liquid-border-color);
+    box-shadow: var(--liquid-box-shadow);
+}
+
+.liquidGlass-text {
+    z-index: 3;
+    font-size: 2rem;
+    color: black;
+}
+
 nav {
     position: fixed;
     left: 50%;
     top: 1em;
     transform: translateX(-50%);
-
+    z-index: 100;
     /* Appearance */
-    border: var(--liquid-border-color);
+    /* border: var(--liquid-border-color);
     box-shadow: var(--liquid-box-shadow);
     background-color: var(--liquid-background-color);
     backdrop-filter: var(--liquid-backdrop-filter);
-    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
-
-    /* Layout */
-    color: var(--text-color);
-    width: fit-content;
-    height: fit-content;
-    border-radius: var(--radius-out);
-    z-index: 100;
-    padding: 0.5em;
+    -webkit-backdrop-filter: var(--liquid-backdrop-filter); */
 
     /* Transitions */
     transition: all 0.5s ease-in-out;
+}
+
+nav div {
+    border-radius: var(--radius-out);
+    padding: 0.1em;
 }
 
 /* Navigation List */
@@ -36,13 +79,13 @@ nav ul {
     align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0.1em;
+    margin: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
 }
 
 /* Navigation List Items */
 nav ul li {
-    margin: 0.25em;
+    margin: 0.2em;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
 }
 
@@ -55,13 +98,13 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     color: var(--text-color);
-    padding: 1rem;
+    opacity: 0.5;
+    padding: 0.75rem;
     border-radius: var(--radius-in);
     text-decoration: none;
     font-size: 0.75rem;
     text-align: center;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
-    opacity: 0.5;
 }
 
 /* Navigation Link Captions */
@@ -71,23 +114,13 @@ nav ul li a .caption {
     transition: all 0.5s ease-in-out;
 }
 
-/* Navigation Link Icons */
-nav ul li a i {
-    scale: 1.75;
-    padding: 0.5rem;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+nav ul li a:hover {
+    opacity: 1;
 }
 
-/* Navigation Link Hover Effects (Desktop) */
-@media screen and (min-width: 500px) {
-    nav ul li a:hover {
-        opacity: 1;
-    }
-
-    nav ul li a:hover .caption {
-        height: 100%;
-        scale: 1;
-    }
+nav ul li a:hover .caption {
+    height: 100%;
+    scale: 1;
 }
 
 /* Active Navigation State */
@@ -103,37 +136,16 @@ nav .active .caption {
 }
 
 /* Mini Navigation State */
-nav.mini {
-    border-radius: 10em;
-    padding: 0.5em;
-}
-
-nav.mini ul {
-    margin: 0.05em;
-}
-
-nav.mini ul li {
-    margin: 0.1em;
-}
-
 nav.mini a {
-    border-radius: 10em;
-    width: 3em !important;
-    height: 3em !important;
-    padding: 0.5rem;
+    padding: 0.2rem;
 }
 
 nav.mini a .caption {
     display: none;
 }
 
-nav.mini a i {
-    scale: 1 !important;
-    padding: 0.25rem;
-}
-
 /* Navigation Gradient Overlays */
-nav::before {
+/* nav::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -161,12 +173,7 @@ nav::after {
     pointer-events: none;
     transition: all 0.5s ease-in-out;
     z-index: -1;
-}
-
-nav.mini::before,
-nav.mini::after {
-    border-radius: 10em;
-}
+} */
 
 /* ===================================
    RESPONSIVE NAVIGATION
@@ -182,10 +189,6 @@ nav.mini::after {
         top: auto;
         transform: translateX(-50%);
     }
-
-    nav ul {
-        display: flex;
-    }
 }
 
 /* Mobile Navigation */
@@ -196,26 +199,5 @@ nav.mini::after {
         width: 2.5em !important;
         height: 2.5em !important;
         padding: 0.75rem;
-    }
-
-    nav a span,
-    nav a .caption {
-        display: none;
-    }
-
-    nav a i {
-        scale: 1.25 !important;
-    }
-
-    /* Mini mobile state (when scrolled down) */
-    nav.mini a {
-        width: 1.5em !important;
-        height: 1.5em !important;
-        padding: 0.4rem;
-    }
-
-    nav.mini a i {
-        scale: 0.9 !important;
-        padding: 0.2rem;
     }
 }

@@ -5,7 +5,9 @@
 /* Hero Section Layout */
 /* Hero Typography */
 
-.hero h1 {
+
+
+.hero-container h1 {
     font-family: "sugar-magic", sans-serif;
     width: 100vw;
     height: fit-content;
@@ -19,48 +21,14 @@
     margin: 0;
 }
 
-.hero h1 strong {
+.hero-container h1 strong {
     color: var(--primary-color);
     font-size: calc(100vw / 7.5);
 }
 
-/* Hero Layout Components */
-.heading {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 
-.container-mini {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 98%;
-    height: 98vh;
-    align-items: end;
-    justify-content: end;
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (max-width: 750px) {
-        bottom: 50px;
-        margin-top: 50vw;
-        height: fit-content;
-
-        @media screen and (max-width: 500px) {
-            bottom: 0;
-            margin-top: 100vw;
-            /* height: 50vh; */
-        }
-    }
-}
 
 /* Hero Animation Items */
-.item {
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
-    opacity: 0;
-    transform: translate(0, 100px);
-}
 
 /* Social Media Links */
 #social-list {
@@ -135,18 +103,9 @@
    RESPONSIVE HERO SECTION
    =================================== */
 
-/* Mobile Hero Typography */
-@media screen and (max-width: 500px) {
-    .hero h1 {
-        text-align: center;
-    }
-
-
-}
-
 /* Tablet Hero Layout */
 @media screen and (max-width: 750px) {
-    .container-mini {
+    .social-wrapper {
         bottom: 50px;
         margin-top: 50vw;
         height: fit-content;
@@ -160,7 +119,11 @@
 
 /* Mobile Hero Layout */
 @media screen and (max-width: 500px) {
-    .container-mini {
+    .hero-container h1 {
+        text-align: center;
+    }
+
+    .social-wrapper {
         bottom: 0;
         margin-top: 80vw;
         height: 50vh;

@@ -12,7 +12,6 @@
 /* Global Styles */
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -25,13 +24,13 @@ body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
     transition: all 0.5s ease-in-out;
 
     @media screen and (max-width: 300px) {
         opacity: 0.5;
     }
+
 }
 
 /* Typography Utilities */
@@ -39,31 +38,37 @@ body {
     border: 4px solid var(--primary-color);
 }
 
-/* Item Headers */
-.item h2 {
-    padding: 0.75rem;
-    font-size: 1.25rem;
-    border-radius: var(--radius-out);
-    color: var(--primary-color);
-    background-color: var(--background-color-secondary);
-    transition: all 0.5s ease-in-out;
-}
-
-.item h3 {
-    padding: 0.75rem;
-    margin: 0;
-    font-size: 1.25rem;
-    border-radius: var(--radius-out);
-    color: var(--text-color);
-    background-color: var(--background-color-tr);
-    backdrop-filter: blur(var(--blur));
-    transition: all 0.5s ease-in-out;
-}
-
+/* Global wrapper */
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Item Headers */
+.hero-container {
+}
+
+/* Hero Layout Components */
+.social-wrapper {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 98vh;
+    align-items: end;
+    justify-content: end;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 750px) {
+        bottom: 50px;
+        margin-top: 50vw;
+        height: fit-content;
+
+        @media screen and (max-width: 500px) {
+            bottom: 0;
+            margin-top: 100vw;
+            /* height: 50vh; */
+        }
+    }
 }
