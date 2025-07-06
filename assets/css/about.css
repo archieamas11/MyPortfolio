@@ -246,9 +246,9 @@
     color: var(--text-color, #007bff);
     border: var(--liquid-border-color);
     box-shadow: var(--liquid-box-shadow);
-    background-color: var(--liquid-bacground-color);
-    backdrop-filter: var(--liquid-backdrop-filter);
-    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.05));
     border-radius: 20px;
     width: 15px;
     height: 15px;
@@ -289,8 +289,6 @@
     background: linear-gradient(145deg,
             rgba(255, 255, 255, 0.1),
             rgba(255, 255, 255, 0.05));
-    backdrop-filter: var(--liquid-backdrop-filter);
-    -webkit-backdrop-filter: var(--liquid-backdrop-filter);
 }
 
 /* .interest-item::before {
