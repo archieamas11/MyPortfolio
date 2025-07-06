@@ -518,6 +518,10 @@ section.projects {
         font-size: 0.6rem;
         padding: 0.25rem 0.5rem;
     }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
 }
 
 /* Auto-playing video */

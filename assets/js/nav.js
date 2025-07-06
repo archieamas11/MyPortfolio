@@ -4,23 +4,6 @@ let nav = document.getElementById("nav");
 let totop = document.getElementById("totop");
 let sidebar = document.getElementById("sidebar");
 
-// Disable browser's scroll restoration and ensure page starts at top
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-
-// Ensure page starts at the top on refresh
-window.addEventListener('beforeunload', function () {
-  window.scrollTo(0, 0);
-});
-
-// Force scroll to top on page load
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 10);
-});
-
 // Also ensure it starts at top when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
   window.scrollTo(0, 0);
@@ -53,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//hides the nav bar when the user scrolls down and show it when the user scrolls up
+//Shrinks the nav bar when the user scrolls down and show it when the user scrolls up
 let lastScrollTop = 0;
 window.addEventListener(
   "scroll",
