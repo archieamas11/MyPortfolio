@@ -227,9 +227,13 @@
     display: flex;
     flex-direction: row;
     gap: 1.25rem;
+    width: 100%;
 }
 
-.streak-stats {}
+.streak-stats {
+    max-width: 400px;
+    width: 100%;
+}
 
 .chart-stats {
     align-items: center;
@@ -1053,6 +1057,10 @@
         max-width: 15rem;
         margin: 0 auto;
         margin-top: 1.25rem;
+    }
+
+    .streak-stats img {
+        width: 100%;
     }
 
     .status-label {
