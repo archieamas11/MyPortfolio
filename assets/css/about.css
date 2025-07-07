@@ -615,11 +615,6 @@
 }
 
 /* Education Section */
-.education-logo {
-    flex-shrink: 0;
-    margin-bottom: 1rem;
-}
-
 .education-logo img {
     border-radius: 12px;
     width: 150px;
@@ -630,13 +625,18 @@
 .education-info {
     flex: 1;
     min-width: 0;
-    /* Allows text to wrap properly */
 }
 
 .school-name h4 {
     margin: 0 0 0.1rem 0;
     color: var(--primary-color, #007bff);
     font-size: var(--font-size-4xl, 2rem);
+}
+
+.educ-degree-tag h5 {
+    font-weight: 100;
+    font-size: var(--font-size-sm, 2rem);
+    margin: 0.25rem;
 }
 
 /* Animation on scroll */
@@ -1112,17 +1112,39 @@
     .education-container {
         flex-direction: column;
         text-align: center;
-        width: 90%;
+        width: fit-content;
+    }
+
+    .educ-degree-tag h5 {
+        padding: 0;
+        font-weight: 100;
+    }
+
+    .year-tag {
+        flex-direction: row;
+        padding: 0;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .education-year,
+    .education-status {
+        font-size: var(--font-size-xs);
+        margin: 0 auto;
+    }
+
+    .school-name h4,
+    .school-name h5 {
+        text-align: center;
     }
 
     .education-logo {
         align-self: center;
-        margin-bottom: 1rem;
+        margin: 0;
     }
 
     .education-logo img {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
 
     .education-info {
