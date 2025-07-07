@@ -4,17 +4,34 @@ let nav = document.getElementById("nav");
 let totop = document.getElementById("totop");
 let sidebar = document.getElementById("sidebar");
 
+// Disable browser's scroll restoration and ensure page starts at top
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Ensure page starts at the top on refresh
+window.addEventListener('beforeunload', function () {
+  window.scrollTo(0, 0);
+});
+
+// Force scroll to top on page load
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 10);
+});
+
 // Also ensure it starts at top when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
   window.scrollTo(0, 0);
-  
+
   // Handle smooth scrolling for navigation links with offset
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
   navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
-      
+
       if (targetId === '#hero') {
         // For home link, scroll to the very top
         window.scrollTo({
