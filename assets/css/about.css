@@ -68,7 +68,7 @@
     content: '';
     position: absolute;
     left: -2px;
-    top: 1.4rem;
+    top: 1.3rem;
     width: 30px;
     height: 2px;
     background-color: var(--primary-color, #007bff);
@@ -78,7 +78,7 @@
     content: '';
     position: absolute;
     left: 26px;
-    top: 0.9rem;
+    top: 0.8rem;
     width: 12px;
     height: 12px;
     background-color: var(--primary-color, #007bff);
@@ -452,9 +452,7 @@
 }
 
 .interest-item:hover {
-    border-color: var(--primary-color, #007bff);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
