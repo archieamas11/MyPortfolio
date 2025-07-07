@@ -10,121 +10,184 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeProjectVideos() {
     const videos = document.querySelectorAll('.project-video');
     
-    // Intersection Observer for performance optimization
+    // Use WeakMap to store video states for better memory management
+    const videoStates = new WeakMap();
+    
+    // Debounce function for performance
+    const debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
+    
+    // Intersection Observer with better performance settings
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const video = entry.target;
-            const loadingSpinner = video.parentElement.querySelector('.video-loading');
-            const fallbackImage = video.parentElement.querySelector('.project-fallback-image');
+            const state = videoStates.get(video);
             
             if (entry.isIntersecting) {
-                // Start loading and playing video when it comes into view
-                if (video.paused && video.readyState >= 2) {
+                // Only try to play if video is ready and not already playing
+                if (video.paused && video.readyState >= 2 && !state?.isPlaying) {
+                    videoStates.set(video, { ...state, isPlaying: true });
                     video.play().catch(error => {
                         console.log('Auto-play failed:', error);
-                        // Show fallback image if autoplay fails
-                        handleVideoError(video, fallbackImage, loadingSpinner);
+                        handleVideoError(video, state?.fallbackImage, state?.loadingSpinner);
+                        videoStates.set(video, { ...state, isPlaying: false });
                     });
                 }
             } else {
-                // Pause video when out of view to save resources
-                if (!video.paused) {
+                // Pause video when out of view
+                if (!video.paused && state?.isPlaying) {
                     video.pause();
+                    videoStates.set(video, { ...state, isPlaying: false });
                 }
             }
         });
     }, {
-        threshold: 0.3, // Trigger when 30% of video is visible
-        rootMargin: '50px' // Start loading 50px before entering viewport
+        threshold: 0.1, // Reduced threshold for better performance
+        rootMargin: '50px' // Increased margin for smoother experience
     });
 
-    // Set up each video
+    // Set up each video with optimizations
     videos.forEach(video => {
         const loadingSpinner = video.parentElement.querySelector('.video-loading');
         const fallbackImage = video.parentElement.querySelector('.project-fallback-image');
         
-        // Mark video as loading initially
-        video.setAttribute('data-loading', 'true');
-        
-        // Video event handlers
-        video.addEventListener('loadstart', () => {
-            if (loadingSpinner) loadingSpinner.style.opacity = '1';
+        // Store references in WeakMap
+        videoStates.set(video, {
+            loadingSpinner,
+            fallbackImage,
+            isPlaying: false,
+            hasLoaded: false
         });
+        
+        // Lazy load video source
+        if (video.hasAttribute('data-src')) {
+            video.src = video.getAttribute('data-src');
+            video.removeAttribute('data-src');
+        }
+        
+        // Optimized event handlers
+        video.addEventListener('loadstart', () => {
+            const state = videoStates.get(video);
+            if (state?.loadingSpinner) {
+                state.loadingSpinner.style.opacity = '1';
+            }
+        }, { once: true });
         
         video.addEventListener('canplay', () => {
-            video.removeAttribute('data-loading');
-            if (loadingSpinner) loadingSpinner.style.opacity = '0';
+            const state = videoStates.get(video);
+            videoStates.set(video, { ...state, hasLoaded: true });
             
-            // Try to play if in viewport
-            const rect = video.getBoundingClientRect();
-            const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+            if (state?.loadingSpinner) {
+                state.loadingSpinner.style.opacity = '0';
+            }
             
-            if (isInViewport) {
+            // Check if video is in viewport using modern API
+            if (video.checkVisibility?.() ?? isElementInViewport(video)) {
                 video.play().catch(error => {
                     console.log('Auto-play failed:', error);
-                    handleVideoError(video, fallbackImage, loadingSpinner);
+                    handleVideoError(video, state?.fallbackImage, state?.loadingSpinner);
                 });
             }
-        });
+        }, { once: true });
         
         video.addEventListener('error', () => {
-            console.log('Video failed to load');
-            handleVideoError(video, fallbackImage, loadingSpinner);
+            const state = videoStates.get(video);
+            handleVideoError(video, state?.fallbackImage, state?.loadingSpinner);
         });
         
-        // Add hover effects
+        // Optimized hover effects with RAF
+        let hoverRAF;
         video.addEventListener('mouseenter', () => {
-            if (!video.paused) {
-                video.style.filter = 'brightness(1.1)';
-            }
+            if (hoverRAF) cancelAnimationFrame(hoverRAF);
+            hoverRAF = requestAnimationFrame(() => {
+                if (!video.paused) {
+                    video.style.filter = 'brightness(1.1)';
+                }
+            });
         });
         
         video.addEventListener('mouseleave', () => {
-            video.style.filter = 'brightness(1)';
+            if (hoverRAF) cancelAnimationFrame(hoverRAF);
+            hoverRAF = requestAnimationFrame(() => {
+                video.style.filter = 'brightness(1)';
+            });
         });
         
-        // Start observing the video
+        // Start observing
         videoObserver.observe(video);
     });
 }
 
-function handleVideoError(video, fallbackImage, loadingSpinner) {
-    // Hide video and loading spinner
-    video.style.display = 'none';
-    if (loadingSpinner) loadingSpinner.style.opacity = '0';
-    
-    // Show fallback image
-    if (fallbackImage) {
-        fallbackImage.style.display = 'block';
-        fallbackImage.style.zIndex = '1';
-    }
+// Optimized viewport check fallback
+function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
-// Handle video loading optimization
-function optimizeVideoLoading() {
-    const videos = document.querySelectorAll('.project-video');
-    
-    videos.forEach(video => {
-        // Set video quality based on screen size
-        if (window.innerWidth <= 768) {
-            // For mobile, we might want to use lower quality videos
-            video.setAttribute('preload', 'none');
-        } else {
-            video.setAttribute('preload', 'metadata');
+function handleVideoError(video, fallbackImage, loadingSpinner) {
+    // Use RAF for smooth transitions
+    requestAnimationFrame(() => {
+        video.style.display = 'none';
+        if (loadingSpinner) loadingSpinner.style.opacity = '0';
+        
+        if (fallbackImage) {
+            fallbackImage.style.display = 'block';
+            fallbackImage.style.zIndex = '1';
         }
     });
 }
 
-// Call optimization on resize
-window.addEventListener('resize', optimizeVideoLoading);
+// Optimized video loading with connection awareness
+function optimizeVideoLoading() {
+    const videos = document.querySelectorAll('.project-video');
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    
+    videos.forEach(video => {
+        // Adaptive preloading based on connection
+        if (connection && connection.effectiveType) {
+            switch (connection.effectiveType) {
+                case 'slow-2g':
+                case '2g':
+                    video.setAttribute('preload', 'none');
+                    break;
+                case '3g':
+                    video.setAttribute('preload', 'metadata');
+                    break;
+                case '4g':
+                default:
+                    video.setAttribute('preload', 'auto');
+            }
+        } else {
+            // Fallback based on screen size
+            video.setAttribute('preload', window.innerWidth <= 768 ? 'none' : 'metadata');
+        }
+    });
+}
+
+// Debounced resize handler
+const debouncedOptimize = debounce(optimizeVideoLoading, 250);
+window.addEventListener('resize', debouncedOptimize);
 
 // Initial optimization
 optimizeVideoLoading();
 
-// Accessibility improvements
+// Enhanced accessibility with focus management
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-        // Pause all videos when ESC is pressed
         const videos = document.querySelectorAll('.project-video');
         videos.forEach(video => {
             if (!video.paused) {
@@ -134,11 +197,41 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Reduce motion preference
-if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+// Optimized reduced motion handling
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function handleReducedMotion() {
     const videos = document.querySelectorAll('.project-video');
     videos.forEach(video => {
-        video.removeAttribute('autoplay');
-        video.pause();
+        if (prefersReducedMotion.matches) {
+            video.removeAttribute('autoplay');
+            video.pause();
+        }
     });
+}
+
+// Listen for changes in motion preference
+prefersReducedMotion.addEventListener('change', handleReducedMotion);
+handleReducedMotion();
+
+// Memory cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    const videos = document.querySelectorAll('.project-video');
+    videos.forEach(video => {
+        video.pause();
+        video.src = '';
+        video.load();
+    });
+});
+
+// Utility function for debouncing
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
