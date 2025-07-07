@@ -434,7 +434,6 @@ section.projects {
     .node-content:hover {
         transform: none;
         box-shadow: none;
-        border-color: inherit;
     }
 
     .project-container::before {
