@@ -1,7 +1,8 @@
 {
-  "scripts": {
-    "build": "minify index.html -o index.html && minify assets/css -o assets/css && minify assets/js -o assets/js"
-  },
+"scripts": {
+  "minify": "minify index.html -o index.html && minify assets/css -o assets/css && minify assets/js -o assets/js",
+  "build": "npm run minify"
+},
   "devDependencies": {
     "minify": "^14.0.0"
   }
