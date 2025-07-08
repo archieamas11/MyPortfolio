@@ -1,12 +1,88 @@
-[build.processing.css]
-  minify = true
-  bundle = false
-[build.processing.js]
-  minify = true
-  bundle = false
+[build]
+  # Build command (if you need a build process)
+  command = "echo 'Building portfolio...'"
   
-  [plugins.inputs.minifierOptions]
-    collapseWhitespace = true
-    conservativeCollapse = true
-    minifyCSS = true
-    minifyJS = true
+  # Directory to publish (root directory in this case)
+  publish = "."
+
+[build.processing]
+  # Skip processing for large files
+  skip_processing = false
+
+[build.processing.css]
+  # Minify CSS files
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  # Minify JavaScript files  
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  # Minify HTML files with specific settings
+  pretty_urls = true
+  canonical_urls = false
+
+[[build.processing.html.minify]]
+  # HTML minification settings
+  collapseWhitespace = true
+  conservativeCollapse = true
+  removeComments = true
+  removeEmptyAttributes = true
+  removeRedundantAttributes = true
+  removeScriptTypeAttributes = true
+  removeStyleLinkTypeAttributes = true
+  useShortDoctype = true
+  minifyCSS = true
+  minifyJS = true
+
+[[headers]]
+  # Set caching headers for static assets
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Set headers for CSS files
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  # Set headers for JS files
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "application/javascript; charset=utf-8"
+
+[[headers]]
+  # Set headers for HTML files
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/html; charset=utf-8"
+
+[[headers]]
+  # Set headers for images
+  for = "*.{png,jpg,jpeg,gif,svg,webp,ico}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Set headers for fonts
+  for = "*.{woff,woff2,ttf,otf,eot}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Redirects (if needed)
+# [[redirects]]
+#   from = "/old-page"
+#   to = "/new-page"
+#   status = 301
+
+# Environment variables (if needed)
+# [build.environment]
+#   NODE_VERSION = "18"
