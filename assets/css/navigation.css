@@ -98,7 +98,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     color: var(--text-color);
-    opacity: 0.5;
+    opacity: 0.6;
     padding: 0.75rem;
     border-radius: var(--radius-in);
     text-decoration: none;
@@ -189,10 +189,14 @@ nav::after {
         top: auto;
         transform: translateX(-50%);
     }
+
+    nav ul li a .caption {
+        display: none;
+    }
 }
 
 /* Mobile Navigation */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 480px) {
 
     /* Normal mobile state (when scrolled up or at top) */
     nav a {

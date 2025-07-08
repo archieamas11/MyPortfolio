@@ -1,7 +1,13 @@
 {
   "scripts": {
-    "minify": "minify --auto index.html -o index.html && minify --auto assets/css/about.css -o assets/css/about.css && minify --auto assets/css/contact.css -o assets/css/contact.css && minify --auto assets/css/footer.css -o assets/css/footer.css && minify --auto assets/css/general.css -o assets/css/general.css && minify --auto assets/css/hero.css -o assets/css/hero.css && minify --auto assets/css/layout.css -o assets/css/layout.css && minify --auto assets/css/navigation.css -o assets/css/navigation.css && minify --auto assets/css/projects.css -o assets/css/projects.css && minify --auto assets/js/projects.js -o assets/js/projects.js && minify --auto assets/js/nav.js -o assets/js/nav.js && minify --auto assets/js/skills.js -o assets/js/skills.js",
-    "build": "npm run minify"
+    "dev": "echo 'Development server - no minification'",
+    "build": "npm run minify",
+    "minify": "npm run clean && npm run minify-html && npm run minify-css && npm run minify-js",
+    "clean": "if exist dist rmdir /s /q dist && mkdir dist && mkdir dist\\assets && mkdir dist\\assets\\css && mkdir dist\\assets\\js && mkdir dist\\assets\\images && mkdir dist\\assets\\fonts",
+    "minify-html": "minify index.html -o dist/index.html",
+    "minify-css": "minify assets/css/about.css -o dist/assets/css/about.css && minify assets/css/contact.css -o dist/assets/css/contact.css && minify assets/css/footer.css -o dist/assets/css/footer.css && minify assets/css/general.css -o dist/assets/css/general.css && minify assets/css/hero.css -o dist/assets/css/hero.css && minify assets/css/layout.css -o dist/assets/css/layout.css && minify assets/css/navigation.css -o dist/assets/css/navigation.css && minify assets/css/projects.css -o dist/assets/css/projects.css",
+    "minify-js": "minify assets/js/projects.js -o dist/assets/js/projects.js && minify assets/js/nav.js -o dist/assets/js/nav.js && minify assets/js/skills.js -o dist/assets/js/skills.js",
+    "copy-assets": "xcopy assets\\images dist\\assets\\images /E /I /Y && xcopy assets\\fonts dist\\assets\\fonts /E /I /Y"
   },
   "devDependencies": {
     "minify": "^14.0.0"
