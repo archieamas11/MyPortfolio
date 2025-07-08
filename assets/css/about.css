@@ -1009,7 +1009,7 @@
     }
 
     .tree-branch {
-        padding-left: 0.5rem;
+        padding: 0;
     }
 
     .tree-branch::before {
@@ -1017,8 +1017,8 @@
     }
 
     .tree-node {
-        padding-left: 0.5rem;
-        margin-bottom: 1rem;
+        padding: 0;
+        margin: 0;
     }
 
     .tree-node::before,
@@ -1041,7 +1041,7 @@
     }
 
     .about-name h4 {
-        font-size: 1.8rem;
+        font-size: var(--font-size-3xl);
         text-align: center;
     }
 
