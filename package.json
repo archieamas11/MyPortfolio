@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "minify public -o dist"
+    "build": "minify index.html -o index.html && minify assets/css -o assets/css && minify assets/js -o assets/js"
   },
   "devDependencies": {
     "minify": "^14.0.0"
