@@ -25,7 +25,8 @@ body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 4em 0 0 0;
-    width: 100vw;
+    width: 98%;
+    margin: 0 auto;
     height: 100vh;
     transition: all 0.5s ease-in-out;
 

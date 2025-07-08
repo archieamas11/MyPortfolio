@@ -45,6 +45,8 @@
         border-radius: var(--radius-out);
         animation: opacity 4s infinite reverse;
         animation-delay: calc(var(--i) * 0.2s);
+        display: flex;
+        gap: 0.5rem;
 
         &:hover {
             background-color: var(--primary-color);
@@ -52,10 +54,7 @@
     }
 }
 
-.social-icon {
-    display: flex;
-    gap: 0.25em;
-}
+
 
 /* #social-list {
     width: max-content;
@@ -106,7 +105,6 @@
 
     #social-list {
         text-align: center;
-
     }
 }
 
@@ -130,5 +128,9 @@
 
     #social-list a {
         font-size: 0.75em;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        gap: 0.5rem;
     }
 }
