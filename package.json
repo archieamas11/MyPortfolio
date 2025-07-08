@@ -1,9 +1,8 @@
 {
-"scripts": {
-  "minify": "minify --auto index.html -o index.html && minify --auto assets/css -o assets/css && minify --auto assets/js -o assets/js",
-  "build": "npm run minify"
-  
-},
+  "scripts": {
+    "minify": "minify --auto index.html -o index.html && minify --auto assets/css/about.css -o assets/css/about.css && minify --auto assets/css/contact.css -o assets/css/contact.css && minify --auto assets/css/footer.css -o assets/css/footer.css && minify --auto assets/css/general.css -o assets/css/general.css && minify --auto assets/css/hero.css -o assets/css/hero.css && minify --auto assets/css/layout.css -o assets/css/layout.css && minify --auto assets/css/navigation.css -o assets/css/navigation.css && minify --auto assets/css/projects.css -o assets/css/projects.css && minify --auto assets/js/projects.js -o assets/js/projects.js && minify --auto assets/js/nav.js -o assets/js/nav.js && minify --auto assets/js/skills.js -o assets/js/skills.js",
+    "build": "npm run minify"
+  },
   "devDependencies": {
     "minify": "^14.0.0"
   }
