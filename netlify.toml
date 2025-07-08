@@ -1,0 +1,12 @@
+[build.processing.css]
+  minify = true
+  bundle = false
+[build.processing.js]
+  minify = true
+  bundle = false
+  
+  [plugins.inputs.minifierOptions]
+    collapseWhitespace = true
+    conservativeCollapse = true
+    minifyCSS = true
+    minifyJS = true
