@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "minify public -o dist"
+  },
+  "devDependencies": {
+    "minify": "^14.0.0"
+  }
+}
