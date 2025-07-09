@@ -13,20 +13,27 @@
     <meta data-rh="true" property="og:title" content="Archie Albarico - My Portfolio" />
     <meta data-rh="true" property="og:description"
         content="A aspiring full-stack developer with a passion for creating dynamic and engaging web applications. I'm developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
-    <link rel="icon" type="image/x-icon" href="assets/images/website-icon.png">
-    <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin>
+    <link rel="icon" type="image/x-icon" href="assets/images/website-icon.webp">
 
     <!-- CSS Files - Load in order: Variables → Layout → Components → Sections -->
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/hero.css">
-    <link rel="stylesheet" href="assets/css/about.css">
+    <!-- Preload CSS files -->
+    <link rel="preload" href="assets/css/about.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <link rel="stylesheet" href="assets/css/about.css"> -->
     <link rel="stylesheet" href="assets/css/projects.css">
     <link rel="stylesheet" href="assets/css/contact.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <noscript>
+        <link rel="stylesheet" href="assets/css/about.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+    </noscript>
 </head>
 
 <body>
@@ -48,15 +55,12 @@
                 <fePointLight x="-150" y="-150" z="250" />
             </feSpecularLighting>
 
-            <feComposite in="specLight" in2="SourceGraphic" operator="screen" result="litImage" />
-
             <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
         </filter>
     </svg>
     <nav id="nav">
         <div class="liquidGlass-wrapper menu">
             <div class="liquidGlass-effect"></div>
-            <div class="liquidGlass-tint"></div>
             <div class="liquidGlass-shine"></div>
             <div class="liquidGlass-text">
                 <ul>
@@ -92,7 +96,7 @@
     <!-- Hero section -->
     <section id="hero">
         <div class="hero-container">
-            <a href="#">
+            <a href="#hero">
                 <div id="logo" class="home-logo item"></div>
             </a>
             <div class="social-wrapper item">
@@ -139,7 +143,7 @@
                         <div class="node-content">
                             <div class="about-profile d-flex item">
                                 <div class="about-visual">
-                                    <img src="assets/images/profile-picture.jpg" alt="my-profile-picture"
+                                    <img src="assets/images/profile-picture.webp" alt="my-profile-picture"
                                         loading="lazy" />
                                 </div>
                                 <div class="about-info">
@@ -356,7 +360,7 @@
                             <!-- Current Education -->
                             <div class="education-container d-flex item">
                                 <div class="education-logo">
-                                    <img src="assets/images/scc.png" alt="st.cecilias-college-logo" loading="lazy" />
+                                    <img src="assets/images/scc.webp" alt="st.cecilias-college-logo" loading="lazy" />
                                 </div>
                                 <div class="education-info">
                                     <div class="school-name">
@@ -387,7 +391,7 @@
                             <!-- Senior High School -->
                             <div class="education-container d-flex item">
                                 <div class="education-logo">
-                                    <img src="assets/images/scc.png" alt="st.cecilias-college-logo" loading="lazy" />
+                                    <img src="assets/images/scc.webp" alt="st.cecilias-college-logo" loading="lazy" />
                                 </div>
                                 <div class="education-info">
                                     <div class="school-name">
@@ -422,7 +426,7 @@
                             <!-- Junior High School -->
                             <div class="education-container d-flex item">
                                 <div class="education-logo">
-                                    <img src="assets/images/vito.png" alt="vito-national-highschool-logo"
+                                    <img src="assets/images/vito.webp" alt="vito-national-highschool-logo"
                                         loading="lazy" />
                                 </div>
                                 <div class="education-info">
@@ -457,7 +461,7 @@
                             <!-- Elementary -->
                             <div class="education-container d-flex item">
                                 <div class="education-logo">
-                                    <img src="assets/images/mch.png" alt="minglanilla-central-school-logo"
+                                    <img src="assets/images/mch.webp" alt="minglanilla-central-school-logo"
                                         loading="lazy" />
                                 </div>
                                 <div class="education-info">
@@ -549,7 +553,7 @@
 
                         <div class="project-visual" data-type="website">
                             <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
+                            <video class="project-video" poster="assets/images/projects/cemeterease-1.webp"
                                 preload="metadata" muted loop autoplay playsinline
                                 src="assets/images/projects/cemeterease-demo.mp4">
                                 <!-- Fallback for browsers that don't support video -->
@@ -557,7 +561,7 @@
                             </video>
 
                             <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
+                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.webp"
                                 alt="CemeterEase project showcase" loading="lazy" style="display: none;" />
 
                             <!-- Loading indicator -->
@@ -608,7 +612,7 @@
 
                         <div class="project-visual" data-type="desktop">
                             <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/cemeterease-1.png"
+                            <video class="project-video" poster="assets/images/projects/cemeterease-1.webp"
                                 preload="metadata" muted loop autoplay playsinline
                                 src="assets/images/projects/cemeterease-demo.mp4">
                                 <!-- Fallback for browsers that don't support video -->
@@ -616,7 +620,7 @@
                             </video>
 
                             <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.png"
+                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.webp"
                                 alt="Cemeterease project showcase" loading="lazy" style="display: none;" />
 
                             <!-- Loading indicator -->
@@ -666,7 +670,7 @@
                         </div>
                         <div class="project-visual" data-type="mobile">
                             <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/self-thoughts.jpg"
+                            <video class="project-video" poster="assets/images/projects/self-thoughts.webp"
                                 preload="metadata" muted loop autoplay playsinline
                                 src="assets/images/projects/self-thoughts-demo.mp4">
                                 <!-- Fallback for browsers that don't support video -->
@@ -674,7 +678,7 @@
                             </video>
 
                             <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/self-thoughts.jpg"
+                            <img class="project-fallback-image" src="assets/images/projects/self-thoughts.webp"
                                 alt="Self Thoughts project showcase" loading="lazy" style="display: none;" />
 
                             <!-- Loading indicator -->
