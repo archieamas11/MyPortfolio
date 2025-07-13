@@ -2,31 +2,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     const skillsGrid = document.querySelector('.skills-grid');
     const skillItems = document.querySelectorAll('.skill-item');
-    
     // Add index for staggered animation
     skillItems.forEach((item, index) => {
         item.style.setProperty('--index', index);
     });
-    
     // Intersection Observer for progress bar animation
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const skillsGrid = entry.target;
-                setTimeout(() => {
+                // Use requestAnimationFrame for smoother animation
+                requestAnimationFrame(() => {
                     skillsGrid.classList.add('loaded');
-                }, 300);
-                observer.unobserve(entry.target);
+                });
+                obs.unobserve(entry.target);
             }
         });
     }, {
         threshold: 0.3
     });
-    
     if (skillsGrid) {
         observer.observe(skillsGrid);
+        // Cleanup observer on unload
+        window.addEventListener('beforeunload', () => {
+            observer.unobserve(skillsGrid);
+            observer.disconnect();
+        });
     }
-    
     // Skill item click handler for potential future features
     skillItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -37,17 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Progress bar value update animation
+// Progress bar value update animation (use requestAnimationFrame)
 function updateSkillProgress() {
     const progressBars = document.querySelectorAll('.progress-bar');
     progressBars.forEach(bar => {
         const progress = bar.style.getPropertyValue('--progress');
         if (progress) {
-            // Animate from 0 to target value
             bar.style.width = '0%';
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 bar.style.width = progress;
-            }, 100);
+            });
         }
     });
 }

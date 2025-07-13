@@ -13,25 +13,14 @@ function initializeProjectVideos() {
     // Use WeakMap to store video states for better memory management
     const videoStates = new WeakMap();
     
-    // Debounce function for performance
-    const debounce = (func, wait) => {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    };
+    // Use global debounce utility (defined at bottom)
     
     // Intersection Observer with better performance settings
-    const videoObserver = new IntersectionObserver((entries) => {
+    // Intersection Observer with better performance settings
+    const videoObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             const video = entry.target;
             const state = videoStates.get(video);
-            
             if (entry.isIntersecting) {
                 // Only try to play if video is ready and not already playing
                 if (video.paused && video.readyState >= 2 && !state?.isPlaying) {
@@ -124,6 +113,11 @@ function initializeProjectVideos() {
         
         // Start observing
         videoObserver.observe(video);
+    // Cleanup observer on unload
+    window.addEventListener('beforeunload', () => {
+        videos.forEach(video => videoObserver.unobserve(video));
+        videoObserver.disconnect();
+    });
     });
 }
 
@@ -178,9 +172,9 @@ function optimizeVideoLoading() {
     });
 }
 
-// Debounced resize handler
+// Debounced resize handler (reuse debounce)
 const debouncedOptimize = debounce(optimizeVideoLoading, 250);
-window.addEventListener('resize', debouncedOptimize);
+window.addEventListener('resize', debouncedOptimize, { passive: true });
 
 // Initial optimization
 optimizeVideoLoading();
@@ -213,7 +207,7 @@ function handleReducedMotion() {
 prefersReducedMotion.addEventListener('change', handleReducedMotion);
 handleReducedMotion();
 
-// Memory cleanup on page unload
+// Memory cleanup on page unload (already handled above for observer)
 window.addEventListener('beforeunload', () => {
     const videos = document.querySelectorAll('.project-video');
     videos.forEach(video => {
@@ -223,15 +217,18 @@ window.addEventListener('beforeunload', () => {
     });
 });
 
-// Utility function for debouncing
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
+// Utility function for debouncing (define once, globally)
+if (typeof window.debounce !== 'function') {
+    window.debounce = function(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
             clearTimeout(timeout);
-            func(...args);
+            timeout = setTimeout(later, wait);
         };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
     };
 }
+const debounce = window.debounce;

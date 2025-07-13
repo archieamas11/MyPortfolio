@@ -1,12 +1,9 @@
 /* ===================================
    NAVIGATION STYLES
    =================================== */
-
-/* Main Navigation Container */
-
-
 .liquidGlass-wrapper {
     display: flex;
+
 }
 
 .liquidGlass-effect {
@@ -14,17 +11,6 @@
     inset: 0;
     backdrop-filter: var(--liquid-backdrop-filter);
     -webkit-backdrop-filter: var(--liquid-backdrop-filter);
-    filter: url(#glass-distortion);
-}
-
-/* .liquidGlass-tint {
-    z-index: 1;
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.13);
-} */
-
-.liquidGlass-shine {
     position: absolute;
     inset: 0;
     z-index: 2;
@@ -33,10 +19,16 @@
     box-shadow: var(--liquid-box-shadow);
 }
 
+.liquidGlass-tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.267);
+}
+
 .liquidGlass-text {
     z-index: 3;
     font-size: 2rem;
-    color: black;
 }
 
 nav {
@@ -119,6 +111,7 @@ nav .active {
     color: white;
     opacity: 1;
 }
+
 
 nav .active .caption {
     height: 100%;
