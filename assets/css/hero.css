@@ -54,17 +54,6 @@
     }
 }
 
-/* #social-list {
-    width: max-content;
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 20px 0 0 0;
-    border: solid yellow;
-}
-
 /* Hero Animations */
 @keyframes opacity {
     0% {
