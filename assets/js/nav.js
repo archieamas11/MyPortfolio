@@ -15,11 +15,11 @@ window.addEventListener('beforeunload', function () {
 });
 
 // Force scroll to top on page load
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    window.scrollTo(0, 0);
-  }, 10);
-});
+// window.addEventListener('load', function () {
+//   setTimeout(function () {
+//     window.scrollTo(0, 0);
+//   }, 10);
+// });
 
 // Also ensure it starts at top when DOM is ready
 document.addEventListener('DOMContentLoaded', function () {
