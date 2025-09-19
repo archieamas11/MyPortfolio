@@ -4,16 +4,13 @@
 /* Hero Typography */
 .hero-container h1 {
     font-family: "sugar-magic", sans-serif;
-    width: 100%;
     height: fit-content;
     transition: all 0.5s ease-in-out;
-    z-index: 1;
     text-align: right;
     font-size: calc(100vw / 6.5);
     line-height: 0.9;
     padding: 0 1rem;
     margin: 0;
-    margin-bottom: 10px;
 }
 
 .hero-container h1 strong {
@@ -27,7 +24,7 @@
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
-    margin: 20px 0 75px 0;
+    margin-bottom: 20px;
 
     @media screen and (max-width: 750px) {
         justify-content: center;
@@ -53,7 +50,17 @@
     }
 }
 
-/* Hero Animations */
+/* #hero {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgb(34, 34, 34);
+} */
+
+/* Social list animations */
 @keyframes opacity {
     0% {
         opacity: 1;
@@ -103,14 +110,13 @@
     .social-wrapper {
         bottom: 0;
         margin-top: 100vw;
-        height: 40vh;
+        height: 35vh;
+        width: 100%;
     }
 }
 
 @media (max-width: 375px) {
-    .social-wrapper {
-        height: 28vh;
-    }
+ 
 
     #social-list a {
         font-size: 0.75em;

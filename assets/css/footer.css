@@ -95,6 +95,9 @@
 @media (max-width: 768px) {
     .footer-container {
         padding: 1.5rem 1rem;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 70px;
     }
 
     .footer-built,

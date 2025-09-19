@@ -10,21 +10,11 @@ html {
 body {
     background-color: var(--background-color-primary);
     font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight);
-    line-height: 1.5;
     color: var(--text-color);
     scroll-behavior: smooth;
-    margin: 0;
-    padding: 4em 0 0 0;
-    width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
-    height: 100vh;
     transition: all 0.5s ease-in-out;
-
-    @media screen and (max-width: 300px) {
-        opacity: 0.5;
-    }
 }
 
 /* Typography Utilities */
@@ -98,7 +88,7 @@ body {
         }
 
         &.home-logo {
-            background-image: url("../images//logo.webp");
+            background-image: url("../images//logo.avif");
         }
     }
 }
