@@ -446,7 +446,7 @@ section.projects {
 }
 
 .project-visual[data-type="mobile"]:hover {
-    transform: translateY(-8px) rotateY(3deg);
+    transform: translateY(-0px);
     box-shadow:
         0 0 0 2px #444,
         0 15px 40px rgba(0, 0, 0, 0.4),
