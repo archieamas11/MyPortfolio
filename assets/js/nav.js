@@ -2,8 +2,59 @@ let logo = document.getElementById("logo");
 let title = document.getElementById("title");
 let nav = document.getElementById("nav");
 let sidebar = document.getElementById("sidebar");
+let totop = document.getElementById("totop");
 
 //Shrinks the nav bar when the user scrolls down and show it when the user scrolls up
+// Disable browser's scroll restoration and ensure page starts at top
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Ensure page starts at the top on refresh
+window.addEventListener('beforeunload', function () {
+  window.scrollTo(0, 0);
+});
+
+// Force scroll to top on page load
+// window.addEventListener('load', function () {
+//   setTimeout(function () {
+//     window.scrollTo(0, 0);
+//   }, 10);
+// });
+
+// Also ensure it starts at top when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  window.scrollTo(0, 0);
+
+  // Handle smooth scrolling for navigation links with offset
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+
+      if (targetId === '#hero') {
+        // For home link, scroll to the very top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        // For other sections, scroll with offset
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Adjust this value as needed
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+});
+
+
 let lastScrollTop = 0;
 window.addEventListener(
   "scroll",
