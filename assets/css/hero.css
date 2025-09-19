@@ -11,14 +11,13 @@
     text-align: right;
     font-size: calc(100vw / 6.5);
     line-height: 0.9;
-    padding: 0;
+    padding: 0 1rem;
     margin: 0;
     margin-bottom: 10px;
 }
 
 .hero-container h1 strong {
     color: var(--primary-color);
-    /* font-size: calc(100vw / 7.5); */
 }
 
 /* Social Media Links */
@@ -28,7 +27,7 @@
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
-    margin: 20px 0 100px 0;
+    margin: 20px 0 75px 0;
 
     @media screen and (max-width: 750px) {
         justify-content: center;

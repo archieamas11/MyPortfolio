@@ -117,3 +117,20 @@
     --radius-in: 15px;
     --radius-out: 20px;
 }
+
+/* Remove scrollbar but still scrollable */
+/* For Chrome, Safari, Edge */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: none;
+    /* hides scrollbar */
+}
+
+/* For IE, old Edge */
+html {
+    -ms-overflow-style: none;
+}

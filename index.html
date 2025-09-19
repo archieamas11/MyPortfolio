@@ -25,873 +25,797 @@
     <link rel="preload" href="assets/css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- <link rel="stylesheet" href="assets/css/about.css"> -->
     <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/projects-mobile.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <!-- <link rel="stylesheet" href="assets/css/footer.css"> -->
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-    <noscript>
-        <link rel="stylesheet" href="assets/css/about.css">
-        <link rel="stylesheet" href="assets/css/footer.css">
-    </noscript>
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <!-- SEO and small accessibility utility -->
+    <link rel="canonical" href="https://archieamas11.github.io/MyPortfolio/">
+    <meta name="robots" content="index, follow">
+    <style>
+        /* Minimal utility for screen-reader-only text */
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+        }
+    </style>
 </head>
 
 <body>
-    <nav id="nav">
-        <div class="liquidGlass-wrapper">
-            <div class="liquidGlass-effect"></div>
-            <div class="liquidGlass-tint"></div>
-            <div class="liquidGlass-text">
-                <ul>
-                    <li><a href="#hero" id='home-nav' class="active" aria-label="Home - navigation bar">
-                            <i data-lucide="house">
-                                home
-                            </i>
-                            <span class="caption">Home</span>
-                        </a></li>
-                    <li><a href="#about-me" id="about-nav" aria-label="About me - Navigation bar">
-                            <i data-lucide="smile">
-                                About Me
-                            </i>
-                            <span class="caption">About</span>
-                        </a></li>
-                    <li><a href="#projects" id="projects-nav" aria-label="Projects - Navigation bar">
-                            <i data-lucide="code">
-                                Projects
-                            </i>
-                            <span class="caption">Projects</span>
-                        </a></li>
-                    <li><a href="#contact" id="contact-nav" aria-label="Contact me - Navigation bar">
-                            <i data-lucide="message-circle">
-                                chat_bubble
-                            </i>
-                            <span class="caption">Contact</span>
-                        </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero section -->
-    <section id="hero">
-        <div class="hero-container">
-            <a href="#hero">
-                <div id="logo" class="home-logo item"></div>
-            </a>
-            <div class="social-wrapper item">
-                <h1 id="title" class="#"><strong class="strong">Archie</strong> Albarico</h1>
-                <div id="social-list" class="#">
-                    <a href="https://www.github.com/archieamas11" data-title="GitHub" aria-label="Github"
-                        class="social-icon" style="--i: 0;">
-                        <i data-lucide="github"></i>
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/archieamas11" data-title="LinkedIn" aria-label="LinkedIn"
-                        class="social-icon" style="--i: 1;">
-                        <i data-lucide="linkedin"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://www.facebook.com/archie.albarico88" data-title="Facebook" aria-label="Facebook"
-                        class="social-icon" style="--i: 2;">
-                        <i data-lucide="facebook"></i>
-                        Facebook
-                    </a>
-                    <a href="https://www.instagram.com/archieamas11" data-title="Instagram" aria-label="Instagram"
-                        class="social-icon" style="--i: 3;">
-                        <i data-lucide="instagram"></i>
-                        Instagram
-                    </a>
-                    <a href="https://t.me/rico" data-title="Telegram" aria-label="Telegram" class="social-icon"
-                        style="--i: 4;">
-                        <i data-lucide="send"></i>
-                        Telegram
-                    </a>
+    <a class="visually-hidden" href="#main-content">Skip to main content</a>
+    <header role="banner">
+        <nav id="nav">
+            <div class="liquidGlass-wrapper">
+                <div class="liquidGlass-effect"></div>
+                <div class="liquidGlass-tint"></div>
+                <div class="liquidGlass-text">
+                    <ul>
+                        <li><a href="#hero" id='home-nav' class="active" aria-label="Home - navigation bar">
+                                <i data-lucide="house">
+                                    home
+                                </i>
+                                <span class="caption">Home</span>
+                            </a></li>
+                        <li><a href="#about-me" id="about-nav" aria-label="About me - Navigation bar">
+                                <i data-lucide="smile">
+                                    About Me
+                                </i>
+                                <span class="caption">About</span>
+                            </a></li>
+                        <li><a href="#projects" id="projects-nav" aria-label="Projects - Navigation bar">
+                                <i data-lucide="code">
+                                    Projects
+                                </i>
+                                <span class="caption">Projects</span>
+                            </a></li>
+                        <li><a href="#contact" id="contact-nav" aria-label="Contact me - Navigation bar">
+                                <i data-lucide="message-circle">
+                                    chat_bubble
+                                </i>
+                                <span class="caption">Contact</span>
+                            </a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <div class="wrapper">
-        <!-- About me section -->
-        <section class="about-me " id="about-me">
-            <div class="section-container tree-container">
-                <h2 class="tree-title">About Me</h2>
-                <div class="tree-branch">
-                    <div class="tree-node">
-                        <h3 class="node-title">Profile</h3>
-                        <div class="node-content">
-                            <div class="about-profile d-flex item">
-                                <div class="about-visual">
-                                    <img src="assets/images/profile-picture.webp" alt="my-profile-picture"
-                                        loading="lazy" />
+    <!-- Hero section -->
+    <main id="main-content">
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="hero-container">
+                <a href="#hero">
+                    <div id="logo" class="home-logo item"></div>
+                </a>
+                <div class="social-wrapper item">
+                    <h1 id="title" class="#"><strong class="strong">Archie</strong> Albarico</h1>
+                    <p id="hero-heading" class="visually-hidden">Intro and social links for Archie Albarico</p>
+                    <div id="social-list" class="#">
+                        <a href="https://www.github.com/archieamas11" data-title="GitHub" aria-label="Github"
+                            class="social-icon" style="--i: 0;" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.facebook.com/archie.albarico88" data-title="Facebook" aria-label="Facebook"
+                            class="social-icon" style="--i: 2;" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="facebook" aria-hidden="true"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/chielbrc/" data-title="Instagram" aria-label="Instagram"
+                            class="social-icon" style="--i: 3;" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="instagram" aria-hidden="true"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://t.me/rico" data-title="Telegram" aria-label="Telegram" class="social-icon"
+                            style="--i: 4;" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="send" aria-hidden="true"></i>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper">
+            <!-- About me section -->
+            <section class="about-me " id="about-me">
+                <div class="section-container tree-container">
+                    <h2 class="tree-title">About Me</h2>
+                    <div class="tree-branch">
+                        <div class="tree-node">
+                            <h3 class="node-title">Profile</h3>
+                            <div class="node-content">
+                                <div class="about-profile d-flex item">
+                                    <figure class="about-visual">
+                                        <img src="assets/images/profile-picture.webp" alt="Portrait of Archie Albarico"
+                                            loading="lazy" />
+                                        <figcaption class="visually-hidden">Portrait of Archie Albarico</figcaption>
+                                    </figure>
+                                    <div class="about-info">
+                                        <div class="about-name">
+                                            <h4>Archie Albarico</h4>
+                                        </div>
+                                        <div class="about-description">
+                                            <p>Hello! I'm Archie Albarico, an aspiring full-stack developer with a
+                                                passion
+                                                for
+                                                creating dynamic and engaging web applications. I'm developing skills in
+                                                both
+                                                front-end and back-end development, crafting user-friendly interfaces
+                                                and
+                                                building robust server-side solutions.</p>
+                                        </div>
+                                        <div class="about-status">
+                                            <span class="status-label">3+ years experience
+                                                •
+                                                8+ projects delivered</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="about-info">
-                                    <div class="about-name">
-                                        <h4>Archie Albarico</h4>
+                                <div class="profile-stats">
+                                    <div class="chart-stats">
+                                        <img src="https://ghchart.rshah.org/archieamas11"
+                                            alt="GitHub Contribution Chart" loading="lazy" />
                                     </div>
-                                    <div class="about-description">
-                                        <p>Hello! I'm Archie Albarico, an aspiring full-stack developer with a passion
-                                            for
-                                            creating dynamic and engaging web applications. I'm developing skills in
-                                            both
-                                            front-end and back-end development, crafting user-friendly interfaces and
-                                            building robust server-side solutions.</p>
-                                    </div>
-                                    <div class="about-status">
-                                        <span class="status-label">3+ years experience
-                                            •
-                                            8+ projects delivered</span>
+                                    <div class="streak-stats">
+                                        <a href="https://git.io/streak-stats">
+                                            <img src="https://github-readme-streak-stats.herokuapp.com?user=archieamas11&theme=transparent&hide_border=true&short_numbers=true&card_width=400&card_height=50&hide_longest_streak=true"
+                                                alt="GitHub Streak" loading="lazy" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="profile-stats">
-                                <div class="chart-stats">
-                                    <img src="https://ghchart.rshah.org/archieamas11" alt="GitHub Contribution Chart"
-                                        loading="lazy" />
+                        </div>
+
+                        <div class="tree-node ">
+                            <h3 class="node-title">Personal Information & Interest</h3>
+                            <div class="node-content">
+                                <div class="details-skills-flex item">
+                                    <div class="personal-details-section">
+                                        <h4 class="subsection-title">Personal Details</h4>
+                                        <ul class="details-list">
+                                            <li><span class="label" aria-hidden="true"><i
+                                                        data-lucide="phone"></i></span><span class="value">+63 963 463
+                                                    6306</span></li>
+                                            <li><span class="label" aria-hidden="true"><i
+                                                        data-lucide="map-pin"></i></span><span
+                                                    class="value">Minglanilla, Cebu City</span></li>
+                                            <li><span class="label" aria-hidden="true"><i
+                                                        data-lucide="mail"></i></span><span class="value"><a
+                                                        href="mailto:archiealbarico69@gmail.com">archiealbarico69@gmail.com</a></span>
+                                            </li>
+                                            <li><span class="label" aria-hidden="true"><i
+                                                        data-lucide="github"></i></span><span class="value"><a
+                                                        href="https://github.com/archieamas11" target="_blank"
+                                                        rel="noopener noreferrer">archieamas11</a></span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="interest-section">
+                                        <h4 class="subsection-title">Interests</h4>
+                                        <div class="interest-grid">
+                                            <div class="interest-item">
+                                                <i data-lucide="music"></i>
+                                                <span>Music</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="camera"></i>
+                                                <span>Photography</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="video"></i>
+                                                <span>Videography</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="book-open"></i>
+                                                <span>Studying</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="brain"></i>
+                                                <span>AI</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="youtube"></i>
+                                                <span>YouTube</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="gamepad-2"></i>
+                                                <span>Gaming</span>
+                                            </div>
+                                            <div class="interest-item">
+                                                <i data-lucide="drum"></i>
+                                                <span>Drumming</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="streak-stats">
-                                    <a href="https://git.io/streak-stats">
-                                        <img src="https://github-readme-streak-stats.herokuapp.com?user=archieamas11&theme=transparent&hide_border=true&short_numbers=true&card_width=400&card_height=50&hide_longest_streak=true"
-                                            alt="GitHub Streak" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="tree-node">
+                            <h3 class="node-title">Skills & Technologies</h3>
+                            <div class="node-content">
+                                <div class="skills-grid item">
+                                    <div class="skill-item" data-skill-level="advanced">
+                                        <i class="devicon-html5-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>HTML5</h6>
+                                            <span class="experience">3+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 90%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="advanced">
+                                        <i class="devicon-css3-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>CSS3</h6>
+                                            <span class="experience">3+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 85%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="advanced">
+                                        <i class="devicon-bootstrap-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>Bootstrap</h6>
+                                            <span class="experience">3+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 90%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="intermediate">
+                                        <i class="devicon-mysql-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>MySQL</h6>
+                                            <span class="experience">3+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 70%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="intermediate">
+                                        <i class="devicon-php-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>PHP</h6>
+                                            <span class="experience">2+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 68%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>JavaScript</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 75%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-react-original colored"></i>
+                                        <div class="skill-info">
+                                            <h6>React</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 55%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-react-original colored"></i>
+                                        <div class="skill-info">
+                                            <h6>React Native</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 55%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-tailwindcss-original colored"></i>
+                                        <div class="skill-info">
+                                            <h6>Tailwind CSS</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 55%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-typescript-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>Typescript</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 55%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-java-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>Java</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 50%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item" data-skill-level="beginner">
+                                        <i class="devicon-cplusplus-plain colored"></i>
+                                        <div class="skill-info">
+                                            <h6>C++</h6>
+                                            <span class="experience">1+ years</span>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="--progress: 50%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tree-node">
+                            <div class="node-title">Education & Academic Journey</div>
+                            <div class="node-content">
+                                <!-- Current Education -->
+                                <div class="education-container d-flex item">
+                                    <div class="education-logo">
+                                        <img src="assets/images/scc.webp" alt="st.cecilias-college-logo"
+                                            loading="lazy" />
+                                    </div>
+                                    <div class="education-info">
+                                        <div class="school-name">
+                                            <h4>St. Cecilia's College - Cebu, Inc.</h4>
+                                            <div class="educ-degree-tag">
+                                                <h5>Bachelor of Science in Information Technology</h5>
+                                                <div class="year-tag">
+                                                    <!-- <span class="education-year">2022 - 2026</span> -->
+                                                    <span class="education-status current">Current</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="education-description">
+                                            <p>Pursuing a comprehensive degree in Information Technology with focus on
+                                                software development, database management, and web technologies. Core
+                                                coursework includes Programming Languages, Data Structures & Algorithms,
+                                                Database Systems, Software Engineering, and Web Development.</p>
+                                            <div class="education-highlights">
+                                                <div class="highlight-item">
+                                                    <i data-lucide="code"></i>
+                                                    <span>Active in Programming Competitions</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Senior High School -->
+                                <div class="education-container d-flex item">
+                                    <div class="education-logo">
+                                        <img src="assets/images/scc.webp" alt="st.cecilias-college-logo"
+                                            loading="lazy" />
+                                    </div>
+                                    <div class="education-info">
+                                        <div class="school-name">
+                                            <h4>St. Cecilia's College - Cebu, Inc.</h4>
+                                            <div class="educ-degree-tag">
+                                                <h5>Senior High School - ICT Strand</h5>
+                                                <div class="year-tag">
+                                                    <span class="education-year">2020 - 2022</span>
+                                                    <span class="education-status completed">Completed</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="education-description">
+                                            <p>Specialized in Information and Communications Technology (ICT) strand,
+                                                building foundational knowledge in computer programming, web design, and
+                                                digital literacy. Graduated with honors and excellent performance in
+                                                technical subjects.</p>
+                                            <div class="education-highlights">
+                                                <div class="highlight-item">
+                                                    <i data-lucide="award"></i>
+                                                    <span>With Honors Graduate</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <i data-lucide="monitor"></i>
+                                                    <span>Excellence in Computer Programming</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Junior High School -->
+                                <div class="education-container d-flex item">
+                                    <div class="education-logo">
+                                        <img src="assets/images/vito.webp" alt="vito-national-highschool-logo"
+                                            loading="lazy" />
+                                    </div>
+                                    <div class="education-info">
+                                        <div class="school-name">
+                                            <h4>Vito National High School - Minglanilla</h4>
+                                            <div class="educ-degree-tag">
+                                                <h5>Junior High School</h5>
+                                                <div class="year-tag">
+                                                    <span class="education-year">2016 - 2020</span>
+                                                    <span class="education-status completed">Completed</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="education-description">
+                                            <p>Completed junior high school education with strong performance in
+                                                mathematics
+                                                and science subjects. Developed early interest in technology and
+                                                problem-solving which led to pursuing ICT strand in senior high.</p>
+                                            <div class="education-highlights">
+                                                <div class="highlight-item">
+                                                    <i data-lucide="book-open"></i>
+                                                    <span>Academic Excellence in Math & Science</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <i data-lucide="users"></i>
+                                                    <span>Active in Student Council</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Elementary -->
+                                <div class="education-container d-flex item">
+                                    <div class="education-logo">
+                                        <img src="assets/images/mch.webp" alt="minglanilla-central-school-logo"
+                                            loading="lazy" />
+                                    </div>
+                                    <div class="education-info">
+                                        <div class="school-name">
+                                            <h4>Minglanilla Central School</h4>
+                                            <div class="educ-degree-tag">
+                                                <h5>Elementary Education</h5>
+                                                <div class="year-tag">
+                                                    <span class="education-year">2010 - 2016</span>
+                                                    <span class="education-status completed">Completed</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="education-description">
+                                            <p>Completed elementary education with consistent academic performance.
+                                                Built
+                                                strong foundations in core subjects and developed early leadership
+                                                skills
+                                                through various school activities and competitions.</p>
+                                            <div class="education-highlights">
+                                                <div class="highlight-item">
+                                                    <i data-lucide="medal"></i>
+                                                    <span>Consistent Honor Student</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <i data-lucide="star"></i>
+                                                    <span>Active in Academic Competitions</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My projects section -->
+            <section class="projects" id="projects">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2>My Projects</h2>
+                        <p>Here are some of the projects I've worked on. Each one represents a unique challenge and
+                            learning
+                            experience.</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Project 1 -->
+                        <div class="project-container item">
+                            <div class="project-wrapper">
+                                <div class="project-visual">
+                                    <img src=" assets/images/projects/finisterre.webp"
+                                        alt="Finisterre Gardenz project screenshot" loading="lazy" />
+                                </div>
+                                <div class="project-info">
+                                    <div class="project-name">
+                                        <h4>Finisterre Gardenz</h4>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>A GIS-powered, cross-platform inventory and navigation system for Finisterre
+                                            Gardenz. It tracks plot availability in
+                                            real time and helps families locate graves and plots through both web and
+                                            Android apps. The system provides accurate,
+                                            turn-by-turn navigation with text-to-speech guidance, tailored to Finisterre
+                                            Gardenz paths, ensuring a reliable and
+                                            precise navigation experience.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-tag">React</span>
+                                            <span class="tech-tag">Typescript</span>
+                                            <span class="tech-tag">Tanstack Query</span>
+                                            <span class="tech-tag">Tailwind CSS</span>
+                                            <span class="tech-tag">Konsta UI</span>
+                                            <span class="tech-tag">Capacitor JS</span>
+                                            <span class="tech-tag">PHP</span>
+                                            <span class="tech-tag">Leaflet</span>
+                                            <span class="tech-tag">Mailer</span>
+                                            <span class="tech-tag">MySQL</span>
+                                            <span class="tech-tag">QGIS</span>
+                                            <span class="tech-tag">Valhalla API</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://finisterre.site" class="project-link primary" target="_blank">
+                                            <span class="project-link-icon"><i data-lucide="globe"></i>Website</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="project-container item">
+                            <div class="project-wrapper">
+                                <div class="project-visual" data-type="website">
+                                    <img src="assets/images/projects/cemeterease.webp"
+                                        alt="CemeterEase project screenshot" loading="lazy" />
+                                </div>
+                                <div class="project-info">
+                                    <div class="project-name">
+                                        <h4>CemeterEase</h4>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>A smart cemetery management system that transforms how people find
+                                            gravesites.
+                                            Features
+                                            interactive QGIS-powered maps with Google Maps API integration, real-time
+                                            search,
+                                            GPS
+                                            navigation, seamless record management, and cloud storage API for secure
+                                            image
+                                            storage.
+                                            No more wandering around looking for that one grave!</p>
+                                        <div class="project-tech">
+                                            <span class="tech-tag">HTML</span>
+                                            <span class="tech-tag">CSS</span>
+                                            <span class="tech-tag">JavaScript</span>
+                                            <span class="tech-tag">Bootstrap</span>
+                                            <span class="tech-tag">PHP</span>
+                                            <span class="tech-tag">Mailer</span>
+                                            <span class="tech-tag">JQuery</span>
+                                            <span class="tech-tag">MySQL</span>
+                                            <span class="tech-tag">QGIS</span>
+                                            <span class="tech-tag">Leaflet</span>
+                                            <span class="tech-tag">G-Maps API</span>
+                                            <span class="tech-tag">Google OAuth 2.0</span>
+                                            <span class="tech-tag">Cloudinary API</span>
+                                            <span class="tech-tag">SMS API</span>
+                                            <span class="tech-tag">PUSHER API</span>
+                                            <span class="tech-tag">Tidio API</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://cemeterease.kesug.com" class="project-link primary"
+                                            target="_blank">
+                                            <span class="project-link-icon"><i data-lucide="globe"></i>Website</span>
+                                        </a>
+                                        <a href="https://github.com/archieamas11/cemeterease"
+                                            class="project-link secondary" target="_blank">
+                                            <span class="project-link-icon"><i data-lucide="github"></i> Source
+                                                Code</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Applications Projects -->
+                    <div class="project-container item mobile">
+                        <div class="project-wrapper-mobile">
+                            <div class="project-info mobile-info">
+                                <div class="project-name">
+                                    <h4>Finisterre Gardenz Mobile</h4>
+                                </div>
+                                <div class="project-description">
+                                    <p>Finisterre Gardenz Mobile is a React Native application designed to help users
+                                        manage their gardening tasks efficiently. With features like plant care
+                                        reminders, weather updates, and a community forum, it’s the perfect companion
+                                        for any gardening enthusiast.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">React Native</span>
+                                        <span class="tech-tag">Expo</span>
+                                        <span class="tech-tag">SQLite</span>
+                                        <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">Mobile App</span>
+                                    </div>
+                                    <div class="project-links mobile-links">
+                                        <a href="" class="project-link secondary"
+                                            onclick="alert('This project is private.'); return false; ">
+                                            <span class="project-link-icon"><i data-lucide="lock"></i> Closed
+                                                Source</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="project-visual" data-type="mobile">
+                                <img src="assets/images/projects/finisterre-mobile.webp"
+                                    alt="Self Thoughts mobile app screenshot" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-container item mobile">
+                        <div class="project-wrapper-mobile">
+                            <div class="project-info mobile-info">
+                                <div class="project-name">
+                                    <h4>Self Thoughts</h4>
+                                </div>
+                                <div class="project-description">
+                                    <p>My digital diary built with React Native - where thoughts meet code! Write
+                                        journal
+                                        entries, reflect on life, and sync across devices with Firebase. Works
+                                        offline
+                                        too,
+                                        because thoughts don't wait for WiFi.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">React Native</span>
+                                        <span class="tech-tag">Expo</span>
+                                        <span class="tech-tag">SQLite</span>
+                                        <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">Mobile App</span>
+                                    </div>
+                                    <div class="project-links mobile-links">
+                                        <a href="https://github.com/archieamas11/self-thoughts"
+                                            class="project-link secondary" target="_blank">
+                                            <span class="project-link-icon"><i data-lucide="github"></i> Source
+                                                Code</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="project-visual" data-type="mobile">
+                                <img src="assets/images/projects/self-thoughts.webp"
+                                    alt="Self Thoughts mobile app screenshot" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact me section -->
+            <section class="contact" id="contact">
+                <div class="section-container item">
+                    <div class="section-header">
+                        <h2>Get In Touch</h2>
+                        <p>Ready to start a project or just want to chat? I'd love to hear from you!</p>
+                    </div>
+                    <div class="contact-layout">
+                        <div class="contact-info">
+                            <h2>Let's Connect</h2>
+                            <p>If you have any questions, project ideas, or would like to collaborate, feel free to
+                                reach
+                                out. I'm always excited to work on new and challenging projects.</p>
+
+                            <ul class="contact-details">
+                                <li>
+                                    <div class="contact-icon">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <span class="contact-label">Email</span>
+                                        <span class="contact-value"><a
+                                                href="mailto:archiealbarico69@gmail.com">archiealbarico69@gmail.com</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon">
+                                        <i data-lucide="phone"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <span class="contact-label">Phone</span>
+                                        <span class="contact-value">09231226478</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-icon">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <span class="contact-label">Location</span>
+                                        <span class="contact-value">Tunghaan, Minglanilla, Cebu</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="contact-social">
+                                <h4>Follow Me</h4>
+                                <div class="contact-social-links">
+                                    <a href="https://www.github.com/archieamas11" class="contact-social-link"
+                                        aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                                        <i data-lucide="github" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/archie.albarico88" class="contact-social-link"
+                                        aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                        <i data-lucide="facebook" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/chielbrc" class="contact-social-link"
+                                        aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                        <i data-lucide="instagram" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="https://t.me/rico" class="contact-social-link" aria-label="Telegram"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i data-lucide="send" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="tree-node ">
-                        <h3 class="node-title">Personal Information & Interest</h3>
-                        <div class="node-content">
-                            <div class="details-skills-flex item">
-                                <div class="personal-details-section">
-                                    <h4 class="subsection-title">Personal Details</h4>
-                                    <ul class="details-list">
-                                        <li><span class="label"><i data-lucide="phone"></i></span><span
-                                                class="value">+63 963 463 6306</span></li>
-                                        <li><span class="label"><i data-lucide="map-pin"></i></span><span
-                                                class="value">Minglanilla, Cebu City</span></li>
-                                        <li><span class="label"><i data-lucide="mail"></i></span><span
-                                                class="value">archiealbarico69@gmail.com</span></li>
-                                        <li><span class="label"><i data-lucide="github"></i></span><span
-                                                class="value">archieamas11</span></li>
-                                    </ul>
+                        <div class="contact-form">
+                            <form id="contact-form" novalidate>
+                                <h3>Send Me a Message</h3>
+                                <!-- Status messages for accessibility -->
+                                <div id="form-status" class="form-status" aria-live="polite" role="status"></div>
+                                <!-- Honeypot field (hidden from users) -->
+                                <div class="hp-field" aria-hidden="true"
+                                    style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                                    <label for="company">Company</label>
+                                    <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
                                 </div>
-                                <div class="interest-section">
-                                    <h4 class="subsection-title">Interests</h4>
-                                    <div class="interest-grid">
-                                        <div class="interest-item">
-                                            <i data-lucide="music"></i>
-                                            <span>Music</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="camera"></i>
-                                            <span>Photography</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="video"></i>
-                                            <span>Videography</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="book-open"></i>
-                                            <span>Studying</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="brain"></i>
-                                            <span>AI</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="youtube"></i>
-                                            <span>YouTube</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="gamepad-2"></i>
-                                            <span>Gaming</span>
-                                        </div>
-                                        <div class="interest-item">
-                                            <i data-lucide="drum"></i>
-                                            <span>Drumming</span>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tree-node">
-                        <h3 class="node-title">Skills & Technologies</h3>
-                        <div class="node-content">
-                            <div class="skills-grid item">
-                                <div class="skill-item" data-skill-level="advanced">
-                                    <i class="devicon-html5-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>HTML5</h6>
-                                        <span class="experience">3+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 90%"></div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                        required>
                                 </div>
-                                <div class="skill-item" data-skill-level="advanced">
-                                    <i class="devicon-css3-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>CSS3</h6>
-                                        <span class="experience">3+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 85%"></div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="What's this about?"
+                                        required>
                                 </div>
-                                <div class="skill-item" data-skill-level="intermediate">
-                                    <i class="devicon-javascript-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>JavaScript</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 75%"></div>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message"
+                                        placeholder="Tell me more about your project or question..."
+                                        required></textarea>
                                 </div>
-                                <div class="skill-item" data-skill-level="intermediate">
-                                    <i class="devicon-mysql-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>MySQL</h6>
-                                        <span class="experience">3+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 70%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="intermediate">
-                                    <i class="devicon-php-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>PHP</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 68%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="beginner">
-                                    <i class="devicon-react-original colored"></i>
-                                    <div class="skill-info">
-                                        <h6>React</h6>
-                                        <span class="experience">1+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 30%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="beginner">
-                                    <i class="devicon-react-original colored"></i>
-                                    <div class="skill-info">
-                                        <h6>React Native</h6>
-                                        <span class="experience">1+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 30%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="advanced">
-                                    <i class="devicon-bootstrap-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>Bootstrap</h6>
-                                        <span class="experience">3+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 90%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="beginner">
-                                    <i class="devicon-java-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>Java</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 50%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="beginner">
-                                    <i class="devicon-cplusplus-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>C++</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 50%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="intermediate">
-                                    <i class="devicon-figma-plain colored"></i>
-                                    <div class="skill-info">
-                                        <h6>Figma</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 50%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-skill-level="intermediate">
-                                    <img src="assets/images/QGIS_logo.svg" style="width: 40px; height: 40px; padding: 5px;" alt="QGIS Logo">
-                                    <div class="skill-info">
-                                        <h6>QGIS</h6>
-                                        <span class="experience">2+ years</span>
-                                        <div class="skill-progress">
-                                            <div class="progress-bar" style="--progress: 75%"></div>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tree-node">
-                        <div class="node-title">Education & Academic Journey</div>
-                        <div class="node-content">
-                            <!-- Current Education -->
-                            <div class="education-container d-flex item">
-                                <div class="education-logo">
-                                    <img src="assets/images/scc.webp" alt="st.cecilias-college-logo" loading="lazy" />
-                                </div>
-                                <div class="education-info">
-                                    <div class="school-name">
-                                        <h4>St. Cecilia's College - Cebu, Inc.</h4>
-                                        <div class="educ-degree-tag">
-                                            <h5>Bachelor of Science in Information Technology</h5>
-                                            <div class="year-tag">
-                                                <!-- <span class="education-year">2022 - 2026</span> -->
-                                                <span class="education-status current">Current</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="education-description">
-                                        <p>Pursuing a comprehensive degree in Information Technology with focus on
-                                            software development, database management, and web technologies. Core
-                                            coursework includes Programming Languages, Data Structures & Algorithms,
-                                            Database Systems, Software Engineering, and Web Development.</p>
-                                        <div class="education-highlights">
-                                            <div class="highlight-item">
-                                                <i data-lucide="code"></i>
-                                                <span>Active in Programming Competitions</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Senior High School -->
-                            <div class="education-container d-flex item">
-                                <div class="education-logo">
-                                    <img src="assets/images/scc.webp" alt="st.cecilias-college-logo" loading="lazy" />
-                                </div>
-                                <div class="education-info">
-                                    <div class="school-name">
-                                        <h4>St. Cecilia's College - Cebu, Inc.</h4>
-                                        <div class="educ-degree-tag">
-                                            <h5>Senior High School - ICT Strand</h5>
-                                            <div class="year-tag">
-                                                <span class="education-year">2020 - 2022</span>
-                                                <span class="education-status completed">Completed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="education-description">
-                                        <p>Specialized in Information and Communications Technology (ICT) strand,
-                                            building foundational knowledge in computer programming, web design, and
-                                            digital literacy. Graduated with honors and excellent performance in
-                                            technical subjects.</p>
-                                        <div class="education-highlights">
-                                            <div class="highlight-item">
-                                                <i data-lucide="award"></i>
-                                                <span>With Honors Graduate</span>
-                                            </div>
-                                            <div class="highlight-item">
-                                                <i data-lucide="monitor"></i>
-                                                <span>Excellence in Computer Programming</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Junior High School -->
-                            <div class="education-container d-flex item">
-                                <div class="education-logo">
-                                    <img src="assets/images/vito.webp" alt="vito-national-highschool-logo"
-                                        loading="lazy" />
-                                </div>
-                                <div class="education-info">
-                                    <div class="school-name">
-                                        <h4>Vito National High School - Minglanilla</h4>
-                                        <div class="educ-degree-tag">
-                                            <h5>Junior High School</h5>
-                                            <div class="year-tag">
-                                                <span class="education-year">2016 - 2020</span>
-                                                <span class="education-status completed">Completed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="education-description">
-                                        <p>Completed junior high school education with strong performance in mathematics
-                                            and science subjects. Developed early interest in technology and
-                                            problem-solving which led to pursuing ICT strand in senior high.</p>
-                                        <div class="education-highlights">
-                                            <div class="highlight-item">
-                                                <i data-lucide="book-open"></i>
-                                                <span>Academic Excellence in Math & Science</span>
-                                            </div>
-                                            <div class="highlight-item">
-                                                <i data-lucide="users"></i>
-                                                <span>Active in Student Council</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Elementary -->
-                            <div class="education-container d-flex item">
-                                <div class="education-logo">
-                                    <img src="assets/images/mch.webp" alt="minglanilla-central-school-logo"
-                                        loading="lazy" />
-                                </div>
-                                <div class="education-info">
-                                    <div class="school-name">
-                                        <h4>Minglanilla Central School</h4>
-                                        <div class="educ-degree-tag">
-                                            <h5>Elementary Education</h5>
-                                            <div class="year-tag">
-                                                <span class="education-year">2010 - 2016</span>
-                                                <span class="education-status completed">Completed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="education-description">
-                                        <p>Completed elementary education with consistent academic performance. Built
-                                            strong foundations in core subjects and developed early leadership skills
-                                            through various school activities and competitions.</p>
-                                        <div class="education-highlights">
-                                            <div class="highlight-item">
-                                                <i data-lucide="medal"></i>
-                                                <span>Consistent Honor Student</span>
-                                            </div>
-                                            <div class="highlight-item">
-                                                <i data-lucide="star"></i>
-                                                <span>Active in Academic Competitions</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- My projects section -->
-        <section class="projects" id="projects">
-            <div class="section-container">
-                <div class="section-header">
-                    <h2>My Projects</h2>
-                    <p>Here are some of the projects I've worked on. Each one represents a unique challenge and learning
-                        experience.</p>
-                </div>
-
-                <!-- Project 1 -->
-                <div class="project-container item">
-                    <div class="project-wrapper">
-                        <div class="project-info">
-                            <div class="project-name">
-                                <h4>CemeterEase</h4>
-                            </div>
-                            <div class="project-description">
-                                <p>A smart cemetery management system that transforms how people find gravesites.
-                                    Features
-                                    interactive QGIS-powered maps with Google Maps API integration, real-time search,
-                                    GPS
-                                    navigation, seamless record management, and cloud storage API for secure image
-                                    storage.
-                                    No more wandering around looking for that one grave!</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">HTML</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Bootstrap</span>
-                                    <span class="tech-tag">PHP</span>
-                                    <span class="tech-tag">Mailer</span>
-                                    <span class="tech-tag">JQuery</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">QGIS</span>
-                                    <span class="tech-tag">Leaflet</span>
-                                    <span class="tech-tag">G-Maps API</span>
-                                    <span class="tech-tag">Google OAuth 2.0</span>
-                                    <span class="tech-tag">Cloudinary API</span>
-                                    <span class="tech-tag">SMS API</span>
-                                    <span class="tech-tag">PUSHER API</span>
-                                    <span class="tech-tag">Tidio API</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
-                                </a>
-                                <a href="https://github.com/archieamas11/cemeterease" class="project-link secondary">
-                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-visual" data-type="website">
-                            <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/cemeterease-1.webp"
-                                preload="metadata" muted loop autoplay playsinline
-                                src="assets/images/projects/cemeterease-demo.mp4">
-                                <!-- Fallback for browsers that don't support video -->
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.webp"
-                                alt="CemeterEase project showcase" loading="lazy" style="display: none;" />
-
-                            <!-- Loading indicator -->
-                            <div class="video-loading">
-                                <div class="loading-spinner"></div>
-                            </div>
-
-                            <!-- Video info overlay -->
-                            <div class="video-info-gradient">
-                                <div class="video-info-overlay">
-                                    <span>Website Demo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-container item">
-                    <div class="project-wrapper">
-                        <div class="project-info">
-                            <div class="project-name">
-                                <h4>Shoptify</h4>
-                            </div>
-                            <div class="project-description">
-                                <p>A sleek desktop e-commerce app built with Java Swing that proves desktop apps can be
-                                    beautiful too. Complete shopping experience with cart management, order processing,
-                                    and
-                                    modern UI design. Amazon vibes, desktop style!</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">Swing</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">OOP</span>
-                                    <span class="tech-tag">Desktop App</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
-
-                                </a>
-                                <a href="https://github.com/archieamas11/shoptify" class="project-link secondary">
-                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-visual" data-type="desktop">
-                            <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/cemeterease-1.webp"
-                                preload="metadata" muted loop autoplay playsinline
-                                src="assets/images/projects/cemeterease-demo.mp4">
-                                <!-- Fallback for browsers that don't support video -->
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/cemeterease-1.webp"
-                                alt="Cemeterease project showcase" loading="lazy" style="display: none;" />
-
-                            <!-- Loading indicator -->
-                            <div class="video-loading">
-                                <div class="loading-spinner"></div>
-                            </div>
-
-                            <!-- Video info overlay -->
-                            <div class="video-info-gradient">
-                                <div class="video-info-overlay">
-                                    <span>Desktop App Demo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-container item">
-                    <div class="project-wrapper">
-                        <div class="project-info">
-                            <div class="project-name">
-                                <h4>Self Thoughts</h4>
-                            </div>
-                            <div class="project-description">
-                                <p>My digital diary built with React Native - where thoughts meet code! Write journal
-                                    entries, reflect on life, and sync across devices with Firebase. Works offline too,
-                                    because thoughts don't wait for WiFi.</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">React Native</span>
-                                    <span class="tech-tag">Expo</span>
-                                    <span class="tech-tag">SQLite</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">CSS</span>
-                                    <span class="tech-tag">Mobile App</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
-
-                                </a>
-                                <a href="https://github.com/archieamas11/self-thoughts" class="project-link secondary">
-                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-visual" data-type="mobile">
-                            <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/self-thoughts.webp"
-                                preload="metadata" muted loop autoplay playsinline
-                                src="assets/images/projects/self-thoughts-demo.mp4">
-                                <!-- Fallback for browsers that don't support video -->
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/self-thoughts.webp"
-                                alt="Self Thoughts project showcase" loading="lazy" style="display: none;" />
-
-                            <!-- Loading indicator -->
-                            <div class="video-loading">
-                                <div class="loading-spinner"></div>
-                            </div>
-
-                            <!-- Video info overlay -->
-                            <div class="video-info-gradient">
-                                <div class="video-info-overlay">
-                                    <span>Mobile App Demo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-container item">
-                    <div class="project-wrapper">
-                        <div class="project-info">
-                            <div class="project-name">
-                                <h4>Inventory Management</h4>
-                            </div>
-                            <div class="project-description">
-                                <p>An inventory management system built with Java OOP principles and MySQL database.
-                                    Features custom UI components for seamless product tracking, stock management, and
-                                    real-time inventory updates and notifications.</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">OOP</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">Swing</span>
-                                    <span class="tech-tag">Custom UI</span>
-                                    <span class="tech-tag">Desktop App</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://cemeterease.kesug.com" class="project-link primary">
-                                    <span class="project-link-icon"><i data-lucide="external-link"></i> Try App</span>
-
-                                </a>
-                                <a href="https://github.com/archieamas11/self-thoughts" class="project-link secondary">
-                                    <span class="project-link-icon"><i data-lucide="github"></i> Source Code</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-visual" data-type="desktop">
-                            <!-- Auto-playing video with fallback to image -->
-                            <video class="project-video" poster="assets/images/projects/self-thoughts.webp"
-                                preload="metadata" muted loop autoplay playsinline
-                                src="assets/images/projects/self-thoughts-demo.mp4">
-                                <!-- Fallback for browsers that don't support video -->
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <!-- Fallback image if video fails to load -->
-                            <img class="project-fallback-image" src="assets/images/projects/self-thoughts.webp"
-                                alt="Self Thoughts project showcase" loading="lazy" style="display: none;" />
-
-                            <!-- Loading indicator -->
-                            <div class="video-loading">
-                                <div class="loading-spinner"></div>
-                            </div>
-
-                            <!-- Video info overlay -->
-                            <div class="video-info-gradient">
-                                <div class="video-info-overlay">
-                                    <span>Desktop App Demo</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-container item">
-                    <div class="project-wrapper">
-                        <div class="project-info">
-                            <div class="project-name">
-                                <h4>Coming Soon</h4>
-                            </div>
-                            <div class="project-description">
-                                <p>I'm currently working on an exciting new project that will be revealed soon! Stay
-                                    tuned for updates on this innovative web application that combines modern
-                                    technologies with creative problem-solving.</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag">TBD</span>
-                                    <span class="tech-tag">In Progress</span>
-                                    <span class="tech-tag">Coming Soon</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link primary disabled">
-                                    <span class="project-link-icon"><i data-lucide="clock"></i> Coming Soon</span>
-                                </a>
-                                <a href="#" class="project-link secondary disabled">
-                                    <span class="project-link-icon"><i data-lucide="github"></i> TBD</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-visual" data-type="placeholder">
-                            <!-- Placeholder image -->
-                            <img class="project-fallback-image" src="https://picsum.photos/id/1020/600/400"
-                                alt="Coming soon project placeholder" loading="lazy" />
-
-                            <!-- Video info overlay -->
-                            <div class="video-info-gradient">
-                                <div class="video-info-overlay">
-                                    <span>Comming Soon</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact me section -->
-        <section class="contact" id="contact">
-            <div class="section-container item">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to start a project or just want to chat? I'd love to hear from you!</p>
-                </div>
-                <div class="contact-layout">
-                    <div class="contact-info">
-                        <h2>Let's Connect</h2>
-                        <p>If you have any questions, project ideas, or would like to collaborate, feel free to reach
-                            out. I'm always excited to work on new and challenging projects.</p>
-
-                        <ul class="contact-details">
-                            <li>
-                                <div class="contact-icon">
-                                    <i data-lucide="mail"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <span class="contact-label">Email</span>
-                                    <span class="contact-value">archie.albarico@gmail.com</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact-icon">
-                                    <i data-lucide="phone"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <span class="contact-label">Phone</span>
-                                    <span class="contact-value">09231226478</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact-icon">
-                                    <i data-lucide="map-pin"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <span class="contact-label">Location</span>
-                                    <span class="contact-value">Tunghaan, Minglanilla, Cebu</span>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="contact-social">
-                            <h4>Follow Me</h4>
-                            <div class="contact-social-links">
-                                <a href="https://www.github.com/archhieamas11" class="contact-social-link"
-                                    aria-label="GitHub">
-                                    <i data-lucide="github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/archhieamas11" class="contact-social-link"
-                                    aria-label="LinkedIn">
-                                    <i data-lucide="linkedin"></i>
-                                </a>
-                                <a href="https://www.facebook.com/archie.albarico88" class="contact-social-link"
-                                    aria-label="Facebook">
-                                    <i data-lucide="facebook"></i>
-                                </a>
-                                <a href="https://www.instagram.com/archhieamas11" class="contact-social-link"
-                                    aria-label="Instagram">
-                                    <i data-lucide="instagram"></i>
-                                </a>
-                                <a href="https://t.me/rico" class="contact-social-link" aria-label="Telegram">
+                                <button type="submit" class="submit-btn">
                                     <i data-lucide="send"></i>
-                                </a>
-                            </div>
+                                    Send Message
+                                </button>
+                            </form>
                         </div>
                     </div>
-
-                    <div class="contact-form">
-                        <form>
-                            <h3>Send Me a Message</h3>
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="your.email@example.com"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="What's this about?"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message"
-                                    placeholder="Tell me more about your project or question..." required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">
-                                <i data-lucide="send"></i>
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
+    </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-content">
-                <p class="footer-built">Built with ❤️ using HTML, CSS & JavaScript</p>
-                <p class="footer-updated">Last updated: July 2025</p>
+                <p class="footer-built">Built with <span aria-hidden="true">❤️</span> using HTML, CSS & JavaScript</p>
+                <p class="footer-updated">Last updated: <time datetime="2025-07">July 2025</time></p>
             </div>
         </div>
     </footer>
@@ -899,7 +823,22 @@
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/skills.js"></script>
     <script src="assets/js/projects.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script>lucide.createIcons();</script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Archie Albarico",
+            "url": "https://archieamas11.github.io/MyPortfolio/",
+            "sameAs": [
+                "https://github.com/archieamas11",
+                "https://www.instagram.com/chielbrc/"
+            ],
+            "jobTitle": "Aspiring Full-stack Developer",
+            "email": "mailto:archiealbarico69@gmail.com"
+        }
+        </script>
 </body>
 
 </html>
