@@ -101,9 +101,9 @@
 
 /* About Profile Styles */
 .about-profile {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .about-visual img {
@@ -715,30 +715,11 @@
     width: 90%;
   }
 
-  .details-skills-flex {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   .personal-details-section,
   .interest-section,
   .skills-section {
     min-width: unset;
     width: 100%;
-  }
-
-  .about-name h4 {
-    font-size: 1.3rem;
-  }
-
-  .about-status {
-    max-width: 18rem;
-    margin-top: 1.25rem;
-  }
-
-  .status-label {
-    font-size: var(--font-size-sm);
-    text-align: center;
   }
 
   .profile-stats {
@@ -749,102 +730,9 @@
 }
 
 @media (max-width: 768px) {
-  .node-title {
-    font-size: 1.1rem;
-    padding: 0.4rem 1rem;
-  }
-
-  .details-skills-flex {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .about-visual img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .about-name h4 {
-    font-size: 1.3rem;
-  }
-
-  .interest-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.8rem;
-  }
-
-  .interest-item {
-    min-height: 80px;
-    padding: 0.8rem;
-  }
-
-  .interest-item i {
-    font-size: 1.5rem;
-  }
-
-  .interest-item span {
-    font-size: var(--font-size-xs);
-  }
-
-  /* Skills Grid Responsive - Tablet */
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
-  .skill-item {
-    min-height: 100px;
-    padding: 1rem 0.8rem;
-  }
-
-  .skill-item i {
-    font-size: 2rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .skill-info h6 {
-    font-size: var(--font-size-sm);
-  }
-
-  .skill-info .experience {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .skill-progress {
-    height: 3px;
-    margin-top: 0.4rem;
-  }
-
-  .skill-item::after {
-    font-size: 0.55rem;
-    padding: 0.2rem 0.35rem;
-    top: 0.4rem;
-    right: 0.4rem;
-  }
-
-  .education-container {
-    flex-direction: column;
-  }
-
   .education-logo img {
     width: 100px;
     height: 100px;
-  }
-
-  .year-tag {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .education-highlights {
-    margin-top: 0.8rem;
-  }
-
-  .highlight-item {
-    padding: 0.3rem 0.6rem;
-    font-size: var(--font-size-xs);
   }
 }
 
@@ -852,30 +740,19 @@
   .section-container:first-child {
     margin-top: 160px;
   }
+
   .node-content::before {
     animation: none;
-  }
-
-  .node-title {
-    margin-top: 1rem;
   }
 
   .d-flex {
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .about-visual {
-    align-self: center;
-  }
-
-  .about-visual img {
-    width: 120px;
-    height: 120px;
+    margin: 0 auto;
   }
 
   .about-name h4 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-4xl);
     text-align: center;
   }
 
@@ -899,39 +776,18 @@
     text-align: center;
   }
 
-  .interest-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-  }
-
-  .interest-item {
-    min-height: 70px;
-    padding: 0.6rem;
-  }
-
-  .interest-item i {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-  }
-
   .interest-item span {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   /* Skills Grid Responsive - Mobile */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 1.1rem;
   }
-
   .skill-item {
     min-height: 85px;
     padding: 0.8rem 0.5rem;
-  }
-
-  .skill-item i {
-    font-size: 1.8rem;
-    margin-bottom: 0.4rem;
   }
 
   .skill-info h6 {
@@ -949,32 +805,11 @@
     margin-top: 0.3rem;
   }
 
-  .skill-item::after {
-    font-size: 0.5rem;
-    padding: 0.15rem 0.3rem;
-    top: 0.3rem;
-    right: 0.3rem;
-  }
-
-  .skill-item:hover::after {
-    opacity: 1;
-  }
-
-  .education-container {
-    flex-direction: column;
-    text-align: center;
-    width: fit-content;
-  }
-
-  .educ-degree-tag h5 {
-    padding: 0;
-    font-weight: 100;
-  }
-
+  /* Education section */
   .year-tag {
-    flex-direction: row;
-    padding: 0;
-    margin: 0 2rem 0 2rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
   }
 
   .education-year,
@@ -990,20 +825,10 @@
 
   .education-logo {
     align-self: center;
-    margin: 0;
-  }
-
-  .education-logo img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .education-info {
-    text-align: left;
   }
 
   .school-name h4 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
   }
 
   .educ-degree-tag h5 {

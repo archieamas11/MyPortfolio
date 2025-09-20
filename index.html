@@ -440,83 +440,85 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- Junior High School -->
-                <div class="education-container d-flex item">
-                  <div class="education-logo">
-                    <img src="assets/images/vito.avif" alt="vito-national-highschool-logo" loading="lazy" />
-                  </div>
-                  <div class="education-info">
-                    <div class="school-name">
-                      <h4>Vito National High School - Minglanilla</h4>
-                      <div class="educ-degree-tag">
-                        <h5>Junior High School</h5>
-                        <div class="year-tag">
-                          <span class="education-year">2016 - 2020</span>
-                          <span class="education-status completed">Completed</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="education-description">
-                      <p>
-                        Completed junior high school education with strong
-                        performance in mathematics and science subjects.
-                        Developed early interest in technology and
-                        problem-solving which led to pursuing ICT strand in
-                        senior high.
-                      </p>
-                      <div class="education-highlights">
-                        <div class="highlight-item">
-                          <i data-lucide="book-open"></i>
-                          <span>Academic Excellence in Math & Science</span>
-                        </div>
-                        <div class="highlight-item">
-                          <i data-lucide="users"></i>
-                          <span>Active in Student Council</span>
-                        </div>
-                      </div>
+            <!-- Junior High School -->
+            <div class="education-container d-flex item">
+              <div class="education-logo">
+                <img src="assets/images/vito.avif" alt="vito-national-highschool-logo" loading="lazy" />
+              </div>
+              <div class="education-info">
+                <div class="school-name">
+                  <h4>Vito National High School - Minglanilla</h4>
+                  <div class="educ-degree-tag">
+                    <h5>Junior High School</h5>
+                    <div class="year-tag">
+                      <span class="education-year">2016 - 2020</span>
+                      <span class="education-status completed">Completed</span>
                     </div>
                   </div>
                 </div>
-
-                <!-- Elementary -->
-                <div class="education-container d-flex item">
-                  <div class="education-logo">
-                    <img src="assets/images/mch.avif" alt="minglanilla-central-school-logo" loading="lazy" />
-                  </div>
-                  <div class="education-info">
-                    <div class="school-name">
-                      <h4>Minglanilla Central School</h4>
-                      <div class="educ-degree-tag">
-                        <h5>Elementary Education</h5>
-                        <div class="year-tag">
-                          <span class="education-year">2010 - 2016</span>
-                          <span class="education-status completed">Completed</span>
-                        </div>
-                      </div>
+                <div class="education-description">
+                  <p>
+                    Completed junior high school education with strong
+                    performance in mathematics and science subjects.
+                    Developed early interest in technology and
+                    problem-solving which led to pursuing ICT strand in
+                    senior high.
+                  </p>
+                  <div class="education-highlights">
+                    <div class="highlight-item">
+                      <i data-lucide="book-open"></i>
+                      <span>Academic Excellence in Math & Science</span>
                     </div>
-                    <div class="education-description">
-                      <p>
-                        Completed elementary education with consistent academic
-                        performance. Built strong foundations in core subjects
-                        and developed early leadership skills through various
-                        school activities and competitions.
-                      </p>
-                      <div class="education-highlights">
-                        <div class="highlight-item">
-                          <i data-lucide="medal"></i>
-                          <span>Consistent Honor Student</span>
-                        </div>
-                        <div class="highlight-item">
-                          <i data-lucide="star"></i>
-                          <span>Active in Academic Competitions</span>
-                        </div>
-                      </div>
+                    <div class="highlight-item">
+                      <i data-lucide="users"></i>
+                      <span>Active in Student Council</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Elementary -->
+            <div class="education-container d-flex item">
+              <div class="education-logo">
+                <img src="assets/images/mch.avif" alt="minglanilla-central-school-logo" loading="lazy" />
+              </div>
+              <div class="education-info">
+                <div class="school-name">
+                  <h4>Minglanilla Central School</h4>
+                  <div class="educ-degree-tag">
+                    <h5>Elementary Education</h5>
+                    <div class="year-tag">
+                      <span class="education-year">2010 - 2016</span>
+                      <span class="education-status completed">Completed</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="education-description">
+                  <p>
+                    Completed elementary education with consistent academic
+                    performance. Built strong foundations in core subjects
+                    and developed early leadership skills through various
+                    school activities and competitions.
+                  </p>
+                  <div class="education-highlights">
+                    <div class="highlight-item">
+                      <i data-lucide="medal"></i>
+                      <span>Consistent Honor Student</span>
+                    </div>
+                    <div class="highlight-item">
+                      <i data-lucide="star"></i>
+                      <span>Active in Academic Competitions</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- My projects section -->
@@ -775,11 +777,11 @@
             </div>
 
             <div class="contact-form">
-              <form id="contact-form" novalidate>
+              <form id="contact-form" novalidate data-endpoint="https://formspree.io/f/xandredl">
                 <h3>Send Me a Message</h3>
-                <!-- Status messages for accessibility -->
+                <!-- Status messages -->
                 <div id="form-status" class="form-status" aria-live="polite" role="status"></div>
-                <!-- Honeypot field (hidden from users) -->
+                <!-- Honeypot field 😜 -->
                 <div class="hp-field" aria-hidden="true" style="
                       position: absolute;
                       left: -10000px;
@@ -793,20 +795,23 @@
                 </div>
                 <div class="form-group">
                   <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your full name" required />
+                  <input type="text" id="name" name="name" placeholder="Your full name" required maxlength="80"
+                    autocomplete="name" />
                 </div>
                 <div class="form-group">
                   <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+                  <input type="email" id="email" name="email" placeholder="your.email@example.com" required
+                    maxlength="254" autocomplete="email" />
                 </div>
                 <div class="form-group">
                   <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+                  <input type="text" id="subject" name="subject" placeholder="What's this about?" required
+                    maxlength="120" />
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
                   <textarea id="message" name="message" placeholder="Tell me more about your project or question..."
-                    required></textarea>
+                    required maxlength="3000"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">
                   <i data-lucide="send"></i>

@@ -13,6 +13,10 @@
     message: { min: 10, max: 3000 }
   };
 
+  const RATE_LIMIT = { windowMs: 60 * 60 * 1000, max: 6 }; // 6 submissions per hour
+  const MIN_FORM_TIME_MS = 2500; // Minimum time user should spend before submitting
+  const FETCH_TIMEOUT = 10000; // 10 seconds
+
   function setStatus(message, type = 'info') {
     if (!statusEl) return;
     statusEl.textContent = message;
@@ -30,6 +34,14 @@
     if (rules.max && value.length > rules.max) return `Must be at most ${rules.max} characters.`;
     if (rules.pattern && !rules.pattern.test(value)) return 'Invalid format.';
     return null;
+  }
+
+  function sanitize(input) {
+    if (typeof input !== 'string') return '';
+    // Strip control characters except newline/tab
+    input = input.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/g, '');
+    // Escape characters that could be misinterpreted by some receivers
+    return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
   function showFieldError(field, error) {
@@ -68,7 +80,10 @@
   function serializeForm() {
     const data = {};
     const formData = new FormData(form);
-    formData.forEach((value, key) => { data[key] = value; });
+    formData.forEach((value, key) => {
+      if (typeof value === 'string') value = sanitize(value.trim());
+      data[key] = value;
+    });
     return data;
   }
 
@@ -83,21 +98,70 @@
     }
     delete payload.company;
 
+    // Timing check to reduce automated/bot submissions
+    const loadedAt = parseInt(form.dataset.loadedAt || '0', 10);
+    if (loadedAt > 0 && (Date.now() - loadedAt) < MIN_FORM_TIME_MS) {
+      setStatus('Form submitted too quickly. Please take a moment and try again.', 'error');
+      return;
+    }
+
+    try {
+      const key = 'contact_form_rates_v1';
+      const raw = localStorage.getItem(key);
+      const now = Date.now();
+      let state = raw ? JSON.parse(raw) : { windowStart: now, count: 0 };
+      if (now - state.windowStart > RATE_LIMIT.windowMs) state = { windowStart: now, count: 0 };
+      if (state.count >= RATE_LIMIT.max) {
+        setStatus('You have reached the maximum number of submissions. Please try again later.', 'error');
+        return;
+      }
+      state.count += 1;
+      localStorage.setItem(key, JSON.stringify(state));
+    } catch (e) {
+      // Ignore storage errors - don't block users if storage is disabled
+      console.warn('Rate limit storage unavailable', e);
+    }
+
+    // Prepare fetch with timeout
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
-      if (!res.ok) throw new Error('Server responded with ' + res.status);
+      clearTimeout(timer);
+
+      if (!res.ok) {
+        // Log limited info for debugging but don't expose details to users
+        console.error('Contact form server error', res.status);
+        throw new Error('Server error');
+      }
 
       setStatus('Thank you! Your message has been sent successfully.', 'success');
       form.reset();
+      // Remove any shown field errors
+      const elements = Array.from(form.elements).filter(el => ['INPUT','TEXTAREA'].includes(el.tagName));
+      elements.forEach(removeFieldError);
     } catch (err) {
-      console.error(err);
-      setStatus('There was a problem sending your message. Please try again.', 'error');
+      clearTimeout(timer);
+      if (err.name === 'AbortError') {
+        setStatus('Request timed out. Please check your connection and try again.', 'error');
+      } else {
+        console.error(err);
+        setStatus('There was a problem sending your message. Please try again later.', 'error');
+      }
       addRetry();
     }
+  }
+
+  // Mark when the form was loaded so we can detect very fast submissions
+  try {
+    form.dataset.loadedAt = Date.now().toString();
+  } catch (e) {
+    /* ignore */
   }
 
   function addRetry() {
