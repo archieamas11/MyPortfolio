@@ -1,6 +1,6 @@
 {
   "scripts": {
-  "build:css": "cleancss -o assets/style.min.css assets/style.css"
+  "build:css": "cleancss -o public/assets/bundle.min.css public/assets/css/*.css"
 },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
