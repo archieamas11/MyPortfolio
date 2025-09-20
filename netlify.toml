@@ -1,7 +1,7 @@
 [[plugins]]
 package = "netlify-plugin-minify-html"
 
-  [plugins.inputs]
+  [plugins.inputs.minifierOptions]
   removeComments = true
   collapseWhitespace = true
   minifyCSS = true
