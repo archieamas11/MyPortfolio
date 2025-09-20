@@ -1,9 +1,0 @@
-{
-  "scripts": {
-  "build:css": "cleancss -o public/assets/bundle.min.css public/assets/css/*.css"
-},
-  "devDependencies": {
-    "clean-css-cli": "^5.6.3",
-    "netlify-plugin-minify-html": "^0.3.1"
-  }
-}
