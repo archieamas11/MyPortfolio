@@ -254,19 +254,15 @@ section.contact {
     transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* Cloudflare Turnstile Widget Styles */
 .cf-turnstile {
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 65px;
-    z-index: 999;
 }
 
 .form-group:has(.cf-turnstile) {
     margin-bottom: 1.5rem;
-    z-index: 999;
 }
 
 .retry-btn:hover {

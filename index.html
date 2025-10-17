@@ -14,19 +14,15 @@
   <meta data-rh="true" property="og:description"
     content="A aspiring full-stack developer with a passion for creating dynamic and engaging web applications. I'm developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
   <link rel="icon" type="image/x-icon" href="assets/images/website-icon.avif" />
-  <!-- Preload important assets -->
   <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
-  <!-- Cloudflare Turnstile (explicit render) -->
   <script>
-    // Will be called when Turnstile API finishes loading
     window.onTurnstileLoad = function () {
       (async function initTurnstile() {
         try {
           const el = document.querySelector('.cf-turnstile');
           if (!el) return;
 
-          // 1) Element attribute → 2) Meta tag → 3) API endpoint
           let siteKey = el.getAttribute('data-sitekey') || '';
           if (!siteKey) {
             siteKey = (document.querySelector('meta[name="turnstile-sitekey"]') || {}).content || '';
@@ -44,10 +40,9 @@
           }
 
           if (!siteKey) {
-            // Optional: use Cloudflare test key in non-production/local contexts so UI renders
             const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
             if (isLocal) {
-              siteKey = '1x00000000000000000000AA'; // Cloudflare test site key
+              siteKey = '1x00000000000000000000AA';
               console.warn('Using Cloudflare Turnstile test site key for local development.');
             } else {
               console.error('Turnstile site key not available. Add data-sitekey on .cf-turnstile, a meta[name="turnstile-sitekey"], or enable /api/get-turnstile-key.');
@@ -89,7 +84,6 @@
   </script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async
     defer></script>
-  <!-- CSS Files - Load in order: Variables → Layout → Components → Sections -->
   <link rel="stylesheet" href="assets/css/general.css" />
   <link rel="stylesheet" href="assets/css/commons.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
@@ -100,13 +94,10 @@
   <link rel="stylesheet" href="assets/css/projects-mobile.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
-  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <!-- SEO and small accessibility utility -->
   <link rel="canonical" href="https://archieamas11.github.io/MyPortfolio/" />
   <meta name="robots" content="index, follow" />
   <style>
-    /* Minimal utility for screen-reader-only text */
     .visually-hidden {
       position: absolute !important;
       height: 1px;
@@ -949,7 +940,6 @@
             <div class="contact-form">
               <form id="contact-form" novalidate data-endpoint="/api/submit-form">
                 <h3>Send Me a Message</h3>
-                <!-- Status messages -->
                 <div id="form-status" class="form-status" aria-live="polite" role="status"></div>
                 <!-- Honeypot field 😜 -->
                 <div class="hp-field" aria-hidden="true" style="
@@ -1015,9 +1005,6 @@
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/skills.js"></script>
   <script src="assets/js/video.js"></script>
-
-  <!-- If not using /api/get-turnstile-key, set meta manually:
-  <meta name="turnstile-sitekey" content="YOUR_SITE_KEY" /> -->
   <script src="assets/js/contact.js"></script>
   <script>
     lucide.createIcons();

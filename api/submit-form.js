@@ -21,10 +21,9 @@ export default async function handler(req, res) {
 
   try {
     const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
-    const RECIPIENT_EMAIL =
-      process.env.RECIPIENT_EMAIL || "archiealbarico69@gmail.com";
+    const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL;
 
-    if (!TURNSTILE_SECRET || TURNSTILE_SECRET === "your_secret_key_here") {
+    if (!TURNSTILE_SECRET || !RECIPIENT_EMAIL) {
       return res.status(500).json({
         success: false,
         error: "Server configuration error",

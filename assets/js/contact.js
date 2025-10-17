@@ -154,7 +154,6 @@
       });
       clearTimeout(timer);
 
-      // Safely parse JSON if present, otherwise read as text to avoid crashes on empty bodies
       const contentType =
         (res.headers && res.headers.get && res.headers.get("content-type")) ||
         "";
@@ -182,8 +181,7 @@
           rawText ||
           `Request failed with status ${status}`;
         if (status === 404 || status === 405) {
-          msg +=
-            " — Backend endpoint not available here. If you're running locally, use 'vercel dev' so /api works, or set data-endpoint on the form to your deployed Vercel URL (e.g., https://your-site.vercel.app/api/submit-form).";
+          msg += " The form submission endpoint is not available.";
         }
         console.error("Contact form server error", status, result || rawText);
         throw new Error(msg);

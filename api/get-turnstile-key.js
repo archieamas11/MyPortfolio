@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", "public, max-age=3600"); // Cache for 1 hour
+  res.setHeader("Cache-Control", "public, max-age=3600");
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   try {
     const siteKey = process.env.TURNSTILE_SITE_KEY;
 
-    if (!siteKey || siteKey === "your_site_key_here") {
+    if (!siteKey) {
       return res.status(500).json({
         error: "Turnstile not configured",
       });
