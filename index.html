@@ -12,29 +12,83 @@
   <meta data-rh="true" property="og:type" content="article" />
   <meta data-rh="true" property="og:title" content="Archie Albarico - My Portfolio" />
   <meta data-rh="true" property="og:description"
-    content="A aspiring full-stack developer with a passion for creating dynamic and engaging web  <script>
-    // Load Turnstile site key dynamically
-    (async function() {
-      try {
-        const response = await fetch('/api/get-turnstile-key');
-        const data = await response.json();
-        if (data.siteKey) {
-          const turnstileWidget = document.querySelector('.cf-turnstile');
-          if (turnstileWidget) {
-            turnstileWidget.setAttribute('data-sitekey', data.siteKey);
-          }
-        }
-      } catch (error) {
-        console.error('Failed to load Turnstile key:', error);
-      }
-    })();
-  </script>m developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
+    content="A aspiring full-stack developer with a passion for creating dynamic and engaging web applications. I'm developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
   <link rel="icon" type="image/x-icon" href="assets/images/website-icon.avif" />
   <!-- Preload important assets -->
   <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
-  <!-- Cloudflare Turnstile -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Cloudflare Turnstile (explicit render) -->
+  <script>
+    // Will be called when Turnstile API finishes loading
+    window.onTurnstileLoad = function () {
+      (async function initTurnstile() {
+        try {
+          const el = document.querySelector('.cf-turnstile');
+          if (!el) return;
+
+          // 1) Element attribute → 2) Meta tag → 3) API endpoint
+          let siteKey = el.getAttribute('data-sitekey') || '';
+          if (!siteKey) {
+            siteKey = (document.querySelector('meta[name="turnstile-sitekey"]') || {}).content || '';
+          }
+          if (!siteKey) {
+            try {
+              const res = await fetch('/api/get-turnstile-key', { headers: { 'Accept': 'application/json' } });
+              if (res.ok) {
+                const data = await res.json();
+                siteKey = data && data.siteKey ? data.siteKey : '';
+              }
+            } catch (e) {
+              console.warn('Turnstile key fetch failed:', e);
+            }
+          }
+
+          if (!siteKey) {
+            // Optional: use Cloudflare test key in non-production/local contexts so UI renders
+            const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+            if (isLocal) {
+              siteKey = '1x00000000000000000000AA'; // Cloudflare test site key
+              console.warn('Using Cloudflare Turnstile test site key for local development.');
+            } else {
+              console.error('Turnstile site key not available. Add data-sitekey on .cf-turnstile, a meta[name="turnstile-sitekey"], or enable /api/get-turnstile-key.');
+              return;
+            }
+          }
+
+          if (window.turnstile && typeof window.turnstile.render === 'function') {
+            const form = document.getElementById('contact-form');
+            let hidden = form ? form.querySelector('input[name="cf-turnstile-response"]') : null;
+            if (!hidden && form) {
+              hidden = document.createElement('input');
+              hidden.type = 'hidden';
+              hidden.name = 'cf-turnstile-response';
+              form.appendChild(hidden);
+            }
+
+            window.turnstile.render(el, {
+              sitekey: siteKey,
+              theme: el.getAttribute('data-theme') || 'light',
+              appearance: el.getAttribute('data-appearance') || 'always',
+              'refresh-expired': 'auto',
+              callback: function (token) {
+                if (hidden) hidden.value = token || '';
+              },
+              'expired-callback': function () {
+                if (hidden) hidden.value = '';
+              },
+              'error-callback': function () {
+                if (hidden) hidden.value = '';
+              }
+            });
+          }
+        } catch (err) {
+          console.error('Failed to initialize Turnstile:', err);
+        }
+      })();
+    };
+  </script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async
+    defer></script>
   <!-- CSS Files - Load in order: Variables → Layout → Components → Sections -->
   <link rel="stylesheet" href="assets/css/general.css" />
   <link rel="stylesheet" href="assets/css/commons.css" />
@@ -930,7 +984,7 @@
                     required maxlength="3000"></textarea>
                 </div>
                 <div class="form-group">
-                  <div class="cf-turnstile" data-sitekey="SITE_KEY_PLACEHOLDER" data-theme="light"></div>
+                  <div class="cf-turnstile" data-theme="light" data-appearance="always"></div>
                 </div>
                 <button type="submit" class="submit-btn">
                   <i data-lucide="send"></i>
@@ -961,23 +1015,9 @@
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/skills.js"></script>
   <script src="assets/js/video.js"></script>
-  <script>
-    // Load Turnstile site key dynamically
-    (async function () {
-      try {
-        const response = await fetch('get-turnstile-key.php');
-        const data = await response.json();
-        if (data.siteKey) {
-          const turnstileWidget = document.querySelector('.cf-turnstile');
-          if (turnstileWidget) {
-            turnstileWidget.setAttribute('data-sitekey', data.siteKey);
-          }
-        }
-      } catch (error) {
-        console.error('Failed to load Turnstile key:', error);
-      }
-    })();
-  </script>
+
+  <!-- If not using /api/get-turnstile-key, set meta manually:
+  <meta name="turnstile-sitekey" content="YOUR_SITE_KEY" /> -->
   <script src="assets/js/contact.js"></script>
   <script>
     lucide.createIcons();

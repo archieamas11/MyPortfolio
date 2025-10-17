@@ -120,9 +120,9 @@ async function verifyTurnstile(token, secret) {
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({
+        body: new URLSearchParams({
           secret: secret,
           response: token,
         }),

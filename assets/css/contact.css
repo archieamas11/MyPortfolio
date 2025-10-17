@@ -261,10 +261,12 @@ section.contact {
     justify-content: center;
     align-items: center;
     min-height: 65px;
+    z-index: 999;
 }
 
 .form-group:has(.cf-turnstile) {
     margin-bottom: 1.5rem;
+    z-index: 999;
 }
 
 .retry-btn:hover {

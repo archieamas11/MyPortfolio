@@ -154,15 +154,44 @@
       });
       clearTimeout(timer);
 
-      const result = await res.json();
+      // Safely parse JSON if present, otherwise read as text to avoid crashes on empty bodies
+      const contentType =
+        (res.headers && res.headers.get && res.headers.get("content-type")) ||
+        "";
+      let result = null;
+      let rawText = "";
+      if (contentType.includes("application/json")) {
+        try {
+          result = await res.json();
+        } catch (_) {
+          // ignore parse error; we'll use rawText below
+        }
+      }
+      if (result == null) {
+        try {
+          rawText = await res.text();
+        } catch (_) {
+          rawText = "";
+        }
+      }
 
       if (!res.ok) {
-        console.error("Contact form server error", res.status, result);
-        throw new Error(result.error || "Server error");
+        const status = res.status;
+        let msg =
+          (result && result.error) ||
+          rawText ||
+          `Request failed with status ${status}`;
+        if (status === 404 || status === 405) {
+          msg +=
+            " — Backend endpoint not available here. If you're running locally, use 'vercel dev' so /api works, or set data-endpoint on the form to your deployed Vercel URL (e.g., https://your-site.vercel.app/api/submit-form).";
+        }
+        console.error("Contact form server error", status, result || rawText);
+        throw new Error(msg);
       }
 
       setStatus(
-        result.message || "Thank you! Your message has been sent successfully.",
+        (result && result.message) ||
+          "Thank you! Your message has been sent successfully.",
         "success"
       );
       form.reset();
