@@ -4,7 +4,7 @@
   "devCommand": null,
   "installCommand": null,
   "framework": null,
-  "outputDirectory": null,
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/api/(.*)",
