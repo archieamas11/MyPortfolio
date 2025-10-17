@@ -2,3 +2,6 @@
 test/
 .github/instructions
 node_modules/
+
+# Environment variables
+.env
