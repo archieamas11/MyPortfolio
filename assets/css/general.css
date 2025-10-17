@@ -1,4 +1,3 @@
-/* Font loading optimization */
 @font-face {
     font-family: "sugar-magic";
     src: url("../fonts/sugarmagicpersonaluseonly-jemyo.otf") format("opentype");
@@ -118,19 +117,14 @@
     --radius-out: 20px;
 }
 
-/* Remove scrollbar but still scrollable */
-/* For Chrome, Safari, Edge */
 ::-webkit-scrollbar {
     display: none;
 }
 
-/* For Firefox */
 html {
     scrollbar-width: none;
-    /* hides scrollbar */
 }
 
-/* For IE, old Edge */
 html {
     -ms-overflow-style: none;
 }

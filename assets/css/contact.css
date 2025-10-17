@@ -1,8 +1,3 @@
-/* ===================================
-   CONTACT SECTION STYLES
-   =================================== */
-
-/* Contact Section Layout */
 section.contact {
     min-height: 100vh;
     height: auto;
@@ -257,6 +252,19 @@ section.contact {
     font-size: 0.7rem;
     cursor: pointer;
     transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Cloudflare Turnstile Widget Styles */
+.cf-turnstile {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65px;
+}
+
+.form-group:has(.cf-turnstile) {
+    margin-bottom: 1.5rem;
 }
 
 .retry-btn:hover {

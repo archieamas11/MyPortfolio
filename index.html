@@ -12,11 +12,29 @@
   <meta data-rh="true" property="og:type" content="article" />
   <meta data-rh="true" property="og:title" content="Archie Albarico - My Portfolio" />
   <meta data-rh="true" property="og:description"
-    content="A aspiring full-stack developer with a passion for creating dynamic and engaging web applications. I'm developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
+    content="A aspiring full-stack developer with a passion for creating dynamic and engaging web  <script>
+    // Load Turnstile site key dynamically
+    (async function() {
+      try {
+        const response = await fetch('/api/get-turnstile-key');
+        const data = await response.json();
+        if (data.siteKey) {
+          const turnstileWidget = document.querySelector('.cf-turnstile');
+          if (turnstileWidget) {
+            turnstileWidget.setAttribute('data-sitekey', data.siteKey);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load Turnstile key:', error);
+      }
+    })();
+  </script>m developing skills in both front-end and back-end development, crafting user-friendly interfaces and building robust server-side solutions." />
   <link rel="icon" type="image/x-icon" href="assets/images/website-icon.avif" />
   <!-- Preload important assets -->
   <link rel="preload" href="assets/fonts/sugarmagicpersonaluseonly-jemyo.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <!-- CSS Files - Load in order: Variables → Layout → Components → Sections -->
   <link rel="stylesheet" href="assets/css/general.css" />
   <link rel="stylesheet" href="assets/css/commons.css" />
@@ -875,7 +893,7 @@
             </div>
 
             <div class="contact-form">
-              <form id="contact-form" novalidate data-endpoint="https://formspree.io/f/xandredl">
+              <form id="contact-form" novalidate data-endpoint="/api/submit-form">
                 <h3>Send Me a Message</h3>
                 <!-- Status messages -->
                 <div id="form-status" class="form-status" aria-live="polite" role="status"></div>
@@ -911,6 +929,9 @@
                   <textarea id="message" name="message" placeholder="Tell me more about your project or question..."
                     required maxlength="3000"></textarea>
                 </div>
+                <div class="form-group">
+                  <div class="cf-turnstile" data-sitekey="SITE_KEY_PLACEHOLDER" data-theme="light"></div>
+                </div>
                 <button type="submit" class="submit-btn">
                   <i data-lucide="send"></i>
                   Send Message
@@ -939,8 +960,25 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/skills.js"></script>
-  <script src="assets/js/contact.js"></script>
   <script src="assets/js/video.js"></script>
+  <script>
+    // Load Turnstile site key dynamically
+    (async function () {
+      try {
+        const response = await fetch('get-turnstile-key.php');
+        const data = await response.json();
+        if (data.siteKey) {
+          const turnstileWidget = document.querySelector('.cf-turnstile');
+          if (turnstileWidget) {
+            turnstileWidget.setAttribute('data-sitekey', data.siteKey);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load Turnstile key:', error);
+      }
+    })();
+  </script>
+  <script src="assets/js/contact.js"></script>
   <script>
     lucide.createIcons();
   </script>

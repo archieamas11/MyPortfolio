@@ -2,6 +2,8 @@
 test/
 .github/instructions
 node_modules/
-
-# Environment variables
+package-lock.json
 .env
+.env.local
+.env.*.local
+.vercel
