@@ -131,22 +131,6 @@
   margin: 0;
 }
 
-.about-status {
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 15rem;
-  border: solid 1px var(--primary-color, #007bff);
-  padding: 0.1rem 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-  background-color: rgba(var(--primary-color-rgb, 0, 123, 255), 0.1);
-  border-radius: 50px;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-}
-
 .status-label {
   font-size: var(--font-size-xs);
   color: var(--gray-400);
@@ -725,12 +709,6 @@
   .about-description p {
     text-align: center;
     font-size: var(--font-size-sm);
-  }
-
-  .about-status {
-    max-width: 15rem;
-    margin: 0 auto;
-    margin-top: 1.25rem;
   }
 
   .streak-stats img {
